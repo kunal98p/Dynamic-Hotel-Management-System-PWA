@@ -19,19 +19,19 @@ hr {
   color: rgba(255, 255, 255, 0.8); 
 }
 
-header.startup {
+.kunal {
   background-position: center;
   background-image: url("image.jpg");
   background-size: cover;
   height: 100%;
 }
 
-header.startup hr {
+.kunal hr {
   margin-top: 200px;
   margin-bottom: 30px; 
 }
 
-header.startup h1 {
+.kunal h1 {
   font-size: 2rem; 
 }
 
