@@ -18,8 +18,13 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-4"><h1>Madhuban Resort & SPA</h1></div>
+      <div class="col-sm-4"><h1>Madhuban Resort </h1></div>
       <div class="col-sm-8"><pre id="bigTwo"></pre></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4"><h1>POPTOS</h1></div>
+      <div class="col-sm-8"><pre id="bigThree"></pre></div>
     </div>
 
   </div>
@@ -46,6 +51,10 @@
   var bigTwo = document.getElementById('bigTwo');
   var dbRef = firebase.database().ref().child('text1');
   dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+  var bigThree = document.getElementById('bigThree');
+  var dbRef = firebase.database().ref().child('text2');
+  dbRef.on('value',snap =>bigThree.innerText = snap.val());
 </script>
 
 </body>
