@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1 id="bigOne"></h1>
+
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
+    authDomain: "management-a62a2.firebaseapp.com",
+    databaseURL: "https://management-a62a2.firebaseio.com",
+    projectId: "management-a62a2",
+    storageBucket: "management-a62a2.appspot.com",
+    messagingSenderId: "972960577898"
+  };
+  firebase.initializeApp(config);
+
+
+  var bigOne = document.getElementById('bigOne');
+  var dbRef = firebase.database().ref().child('text');
+  dbRef.on('value',snap =>bigOne.innerText = snap.val());
+</script>
+
+</body>
+</html>
