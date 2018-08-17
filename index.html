@@ -47,9 +47,90 @@
 
      /* Set the size of the div element that contains the map */
       #map {
-            height: 200px;  /* The height is 400 pixels */
+        height: 200px;  /* The height is 400 pixels */
         width: 300px;  /* The width is the width of the web page */
+         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
        }
+
+
+
+    .parallax { 
+
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+  .zooms{
+    
+    transition: transform .2s; /* Animation */
+    
+}
+
+.zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/* Callout box - fixed position at the bottom of the page */
+.callout {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  max-width: 300px;
+}
+
+/* Callout header */
+.callout-header {
+  padding: 25px 15px;
+  background: #555;
+  font-size: 30px;
+  color: white;
+}
+
+/* Callout container/body */
+.callout-container {
+  padding: 15px;
+  background-color: #ccc;
+  color: black
+}
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Change color on mouse-over */
+.closebtn:hover {
+  color: lightgrey;
+}
+
+.btn1 {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.btn1:hover {opacity: 1}
 
   </style>
 </head>
@@ -57,11 +138,11 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar ">
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand" href="#" target="_blank">
+      <a class="navbar-brand" href="page1.html" target="_blank">
         <strong class="white-text display-4">HMS</strong>
       </a>
 
@@ -75,15 +156,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="page1.html">VIEW WAITING TIME
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          
-        </ul>
-
+        
    
 
       </div>
@@ -93,7 +166,7 @@
   <!-- Navbar -->
 
   <!-- Full Page Intro -->
-  <div class="view full-page-intro" style="background-image: url('sample.jpg'); background-repeat: no-repeat; background-size: cover;">
+  <div class="view full-page-intro parallax" style="background-image: url('sample.jpg'); background-repeat: no-repeat; background-size: cover;">
 
     <!-- Mask & flexbox options-->
     <div class="mask rgba-cyan-light d-flex justify-content-center align-items-center">
@@ -107,7 +180,7 @@
           <!--Grid column-->
           <div class=" col-xl-6 mb-4 white-text text-center text-md-left">
 
-              <h1 class="font-weight-bold mt-sm-5 display-3">COMING SOON!!</h1>
+            <h1 class="font-weight-bold mt-sm-5 display-3">COMING SOON!!</h1>
 
             <hr class="hr-light">
 
@@ -115,8 +188,7 @@
                   Give it a try, It saves time </h5>
 
             <p class="mb-4 d-none d-md-block">
-               <h4 class="display-4">"Dynamic Hotel Management System"</h4>
-               <h4 class="display-4">(HMS)</h4>
+               <h4 class="display-3">"Dynamic Hotel Management System(HMS)"</h4>
             </p>
 
           </div>
@@ -126,20 +198,21 @@
 
 
           <!--Grid column-->
-          <div class="col-xl-5 mb-4 d-flex justify-content-center align-items-center">
+          <div class="col-xl-5 mb-4 d-flex justify-content-center align-items-center ">
 
            
 
             <!--Card-->
-            <div class="card">
+            <div class="card rgba-stylish-strong  ">
 
               <!--Card content-->
               <div class="card-body">
 
                  <div id="map"></div>
+                 <br>
 
               
-               <a target="_blank" href="page1.html" class="btn btn-indigo btn-lg d-flex justify-content-center">EXPLORE </a>
+               <a target="_blank" href="page1.html" class="btn btn-indigo btn-lg d-flex justify-content-center zoom btn1">EXPLORE </a>
 
               </div>
 
@@ -162,19 +235,22 @@
   </div>
   <!-- Full Page Intro -->
 
-  
+  <div class="callout">
+  <div class="callout-header">NOTE</div>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <div class="callout-container">
+    <p >This Site is still Under Contruction</p>
+  </div>
+</div>
 
   <!--Footer-->
-<!--   <footer class="page-footer text-center font-small mt-4 wow-fadeIn">
+  <footer class="page-footer text-center font-small mt-4 wow-fadeIn">
 
    
     <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/getting-started/" target="_blank" role="button">Download MDB
-        <i class="fa fa-download ml-2"></i>
-      </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank" role="button">Start free tutorial
-        <i class="fa fa-graduation-cap ml-2"></i>
-      </a>
+     <p class="display-5">This site is made to demonstrate Dynamic Hotel Management System where user can the Guest can see the availaibilty of Rooms , waiting time in Restaurants and order food online </p>
+
+      
     </div>
   
 
@@ -184,8 +260,12 @@
 
 
 
-  </footer> -->
+  </footer>
   <!--/.Footer-->
+
+
+
+
 
     
     <script>
