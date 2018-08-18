@@ -7,9 +7,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 
 </head>
 <body>
+
+  
   <br><br>
+
+  <div id = "demo">
   <div class="container">
 
     <div class="row">
@@ -18,20 +24,36 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-4"><h1>Madhuban Resort </h1></div>
+      <div class="col-sm-4"><h1>Dominos</h1></div>
       <div class="col-sm-8"><pre id="bigTwo"></pre></div>
     </div>
 
     <div class="row">
-      <div class="col-sm-4"><h1>POPTOS</h1></div>
+      <div class="col-sm-4"><h1>Poptos</h1></div>
       <div class="col-sm-8"><pre id="bigThree"></pre></div>
     </div>
 
-  </div>
+    <div class="row">
+      <div class="col-sm-4"><h1>Madhuban Resort</h1></div>
+      <div class="col-sm-8"><pre id="bigFour"></pre></div>
+    </div>
 
+  </div>
+</div>
 
 <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
 <script>
+
+
+  function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+  }
+
+
+  
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
@@ -42,20 +64,222 @@
     messagingSenderId: "972960577898"
   };
   firebase.initializeApp(config);
+//..............................................................
+    var d = new Date();
+    var x = document.getElementById("demo");
+    var h = addZero(d.getHours());
+    
+    
+//grill kitchen
+if(h>=21 && h<23){
+var bigOne = document.getElementById('bigOne');
+  
+var dbRef = firebase.database().ref().child('text4');
+ dbRef.on('value',snap =>bigOne.innerText = snap.val());
+  }
+else if(h>=10 && h<15){
+
+      
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
 
 
-  var bigOne = document.getElementById('bigOne');
-  var dbRef = firebase.database().ref().child('text');
-  dbRef.on('value',snap =>bigOne.innerText = snap.val());
+}
+else if(h>=15 && h<19){
 
-  var bigTwo = document.getElementById('bigTwo');
-  var dbRef = firebase.database().ref().child('text1');
-  dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+      
 
-  var bigThree = document.getElementById('bigThree');
-  var dbRef = firebase.database().ref().child('text2');
-  dbRef.on('value',snap =>bigThree.innerText = snap.val());
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+      
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
+
+
+}
+else{
+
+      
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
+
+
+}
+
+//dominios
+if(h>=21 && h<23){
+var bigTwo = document.getElementById('bigTwo');
+  
+var dbRef = firebase.database().ref().child('text');
+ dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+  }
+else if(h>=10 && h<15){
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+else{
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+
+//poptos
+if(h>=21 && h<23){
+var bigThree = document.getElementById('bigThree');
+  
+var dbRef = firebase.database().ref().child('text4');
+ dbRef.on('value',snap =>bigThree.innerText = snap.val());
+  }
+else if(h>=10 && h<15){
+
+      
+
+var bigThree = document.getElementById('bigThree');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigThree.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+      
+
+var bigThree = document.getElementById('bigThree');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigThree.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+      
+
+var bigThree = document.getElementById('bigThree');
+var dbRef = firebase.database().ref().child('text');
+  
+dbRef.on('value',snap =>bigThree.innerText = snap.val());
+
+
+}
+else{
+
+      
+
+var bigThree = document.getElementById('bigThree');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigThree.innerText = snap.val());
+
+
+}
+
+
+//madhubhan
+if(h>=21 && h<23){
+var bigFour = document.getElementById('bigFour');
+  
+var dbRef = firebase.database().ref().child('text1');
+ dbRef.on('value',snap =>bigFour.innerText = snap.val());
+  }
+else if(h>=10 && h<15){
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+
+}
+else{
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+
+}
 </script>
+
 
 </body>
 </html>

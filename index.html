@@ -203,7 +203,7 @@ z-index: 999999;
   <div class="double-bounce1"></div>
   <div class="double-bounce2"></div>
   <br><br><br>
-  <h1 class = "display-1 d-flex justify-content-center">NAMASTE</h1>
+  <h1 id="changeText" class = "display-1 d-flex justify-content-center"></h1>
   
 
 </div>
@@ -376,26 +376,46 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   </script>
 
   <script>
+  
+
+var text = ["Welcome", "NAMASTE", "Hiii!!"];
+var counter = 0;
+var elem = document.getElementById("changeText");
+var inst = setInterval(change, 500);
+
+function change() {
+  elem.innerHTML = text[counter];
+  counter++;
+  if (counter >= text.length) {
+    counter = 0;
+    // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+  }
+}
+</script>
+
+  <script>
 var myVar;
 
 function myFunction() {
-    myVar = setTimeout(showPage, 2000);
+    myVar = setTimeout(showPage, 1700);
 }
 
-$(window).on("load", function() {
-preloaderFadeOutTime = 400;
-function hidePreloader() {
-var preloader = $(".spinner-wrapper");
-preloader.fadeOut(preloaderFadeOutTime);
-}
-hidePreloader();
-});
+// $(window).on("load", function() {
+// preloaderFadeOutTime = 400;
+// function hidePreloader() {
+// var preloader = $(".spinner-wrapper");
+// preloader.fadeOut(preloaderFadeOutTime);
+// }
+// hidePreloader();
+// });
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
 </script>
+
+
 
 </body>
 
