@@ -172,6 +172,49 @@ background-color: #000022;
 z-index: 999999;
 }
 
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+
   </style>
 </head>
 
@@ -219,7 +262,7 @@ z-index: 999999;
   <!-- Navbar -->
 
   <!-- Full Page Intro -->
-  <div class="view full-page-intro parallax" style="background-image: url('sample.jpg'); background-repeat: no-repeat; background-size: cover;">
+  <div class="view full-page-intro parallax " style="background-image: url('sample.jpg'); background-repeat: no-repeat; background-size: cover;">
 
     <!-- Mask & flexbox options-->
     <div class="mask gradient d-flex justify-content-center align-items-center">
@@ -256,7 +299,7 @@ z-index: 999999;
            
 
             <!--Card-->
-            <div class="card rgba-stylish-strong  ">
+            <div class="card rgba-stylish-strong animate-bottom ">
 
               <!--Card content-->
               <div class="card-body">
