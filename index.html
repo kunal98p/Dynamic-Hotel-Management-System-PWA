@@ -81,6 +81,7 @@
 
 
 
+
 /* Close button */
 .closebtn {
   position: absolute;
@@ -225,7 +226,7 @@ z-index: 999999;
   <div class="double-bounce1"></div>
   <div class="double-bounce2"></div>
   <br><br><br><br><br>
-  <h1 id="changeText" class = " display-1 d-flex justify-content-center" style="color: #4D5656 ";></h1>
+  <h1 id="changeText" class = " display-1 d-flex justify-content-center" style="color: #4D5656 ;"></h1>
   
 
 </div>
@@ -394,10 +395,10 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   <script>
   
 
-var text = ["Holà", "Hiiii", "NAMASTE"];
+var text = ["Holà", "Hiiii", "नमस्ते  "];
 var counter = 0;
 var elem = document.getElementById("changeText");
-var inst = setInterval(change, 500);
+var inst = setInterval(change, 520);
 
 function change() {
   elem.innerHTML = text[counter];
