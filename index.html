@@ -46,181 +46,178 @@
           }
 
      /* Set the size of the div element that contains the map */
-      #map {
-        height: 200px;  /* The height is 400 pixels */
-        width: 300px;  /* The width is the width of the web page */
+     #map {
+        height: 200px; 
+        width: 300px;  
          
        }
 
 
 
-  .parallax {
+    .parallax {
 
 
-    /* Full height */
-    height: 100%; 
+      /* Full height */
+      height: 100%; 
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+     }
 
+    .zooms{
+      
+      transition: transform .2s; /* Animation */
+      
+     }
 
+    .zoom:hover {
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
 
-  .zooms{
-    
-    transition: transform .2s; /* Animation */
-    
-}
+     /* Close button */
+    .closebtn {
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
 
-.zoom:hover {
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+    /* Change color on mouse-over */
+    .closebtn:hover {
+      color: lightgrey;
+    }
 
+    .btn1 {
+      background-color: #f4511e;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
 
+    .btn1:hover {opacity: 1}
 
+    .gradient {
+      background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.5)), to(rgba(29, 210, 177, 0.5)));
+      background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+    }
 
-/* Close button */
-.closebtn {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
+    .spinner {
+      width: 40px;
+      height: 40px;
 
-/* Change color on mouse-over */
-.closebtn:hover {
-  color: lightgrey;
-}
+      position: relative;
+      position: absolute;
+      top: 48%;
+      left: 48%;
+    }
 
-.btn1 {
-  background-color: #f4511e;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.8;
-  transition: 0.3s;
-}
+    .double-bounce1, .double-bounce2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #4D5656;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+      animation: sk-bounce 2.0s infinite ease-in-out;
+    }
 
-.btn1:hover {opacity: 1}
+    .double-bounce2 {
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+    }
 
-.gradient {
-  background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
-  background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.5)), to(rgba(29, 210, 177, 0.5)));
-  background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
-  background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
-}
+    @-webkit-keyframes sk-bounce {
+      0%, 100% { -webkit-transform: scale(0.0) }
+      50% { -webkit-transform: scale(1.0) }
+    }
 
-.spinner {
-  width: 40px;
-  height: 40px;
+    @keyframes sk-bounce {
+      0%, 100% { 
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      } 50% { 
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
 
-  position: relative;
-  position: absolute;
-  top: 48%;
-  left: 48%;
-}
+    .spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000022;
+    z-index: 999999;
+    }
 
-.double-bounce1, .double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #4D5656;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
+    /* Add animation to "page content" */
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
 
-.double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 } 
+      to { bottom:0px; opacity:1 }
+    }
 
-@-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
-}
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
 
-@keyframes sk-bounce {
-  0%, 100% { 
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% { 
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
-}
+    #myDiv {
+      display: none;
+      text-align: center;
+    }
 
-.spinner-wrapper {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #000022;
-z-index: 999999;
-}
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
 
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 } 
+      to { bottom:0px; opacity:1 }
+    }
 
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
-
-#myDiv {
-  display: none;
-  text-align: center;
-}
-
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
 
 
   </style>
 </head>
 
 <body onload="myFunction()">
+
 <!-- preloader -->
+
 <div id = "loader" class="spinner-wrapper">
   <div  class="spinner">
   <div class="double-bounce1"></div>
@@ -243,20 +240,7 @@ z-index: 999999;
         <strong class="white-text display-4">HMS</strong>
       </a>
 
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <!-- Left -->
-        
-   
-
-      </div>
+       </div>
 
     </div>
   </nav>
@@ -277,7 +261,7 @@ z-index: 999999;
           <!--Grid column-->
           <div class=" col-xl-6 mb-4 white-text text-center text-md-left">
 
-            <h1 class="font-weight-bold mt-sm-5 display-3">COMING SOON!!</h1>
+            <h1 class="font-weight-bold mt-sm-5 display-3">WELCOME</h1>
 
             <hr class="hr-light">
 
@@ -340,7 +324,7 @@ z-index: 999999;
    
     <div class="pt-4">
      <p class="display-5">This site is made to demonstrate Dynamic Hotel Management System where user can the Guest can see the availaibilty of Rooms , waiting time in Restaurants and order food online </p>
-     <p >© KUNAL PARIKH</p>
+     
 
       
     </div>
@@ -348,90 +332,72 @@ z-index: 999999;
 
     <hr class="my-4">
 
-  
-
-
-
-  </footer>
+ </footer>
   <!--/.Footer-->
 
-
-
-
-
-    
-    <script>
-// Initialize and add the map
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(22.564197, 72.928699),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.HYBRID
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
+   <script>
+      // Initialize and add the map
+      function myMap() {
+          var mapOptions = {
+              center: new google.maps.LatLng(22.564197, 72.928699),
+              zoom: 15,
+              mapTypeId: google.maps.MapTypeId.HYBRID
+          }
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
+          <!--Load the API from the specified URL
+          * The async attribute allows the browser to render the page while the API loads
+          * The key parameter will contain your own API key (which is not needed for this tutorial)
+          * The callback parameter executes the initMap() function
+          -->
     <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
- 
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Initializations -->
-  <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
+       
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <!-- Initializations -->
+        <script type="text/javascript">
+          // Animations initialization
+          new WOW().init();
+   </script>
+
+   <script>
+        
+
+      var text = ["Holà", "Hiiii", "नमस्ते  "];
+      var counter = 0;
+      var elem = document.getElementById("changeText");
+      var inst = setInterval(change, 500);
+
+      function change() {
+        elem.innerHTML = text[counter];
+        counter++;
+        if (counter >= text.length) {
+          counter = 0;
+          // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+        }
+      }
   </script>
 
   <script>
-  
+      var myVar;
 
-var text = ["Holà", "Hiiii", "नमस्ते  "];
-var counter = 0;
-var elem = document.getElementById("changeText");
-var inst = setInterval(change, 500);
+      function myFunction() {
+          myVar = setTimeout(showPage, 1700);
+      }
 
-function change() {
-  elem.innerHTML = text[counter];
-  counter++;
-  if (counter >= text.length) {
-    counter = 0;
-    // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
-  }
-}
-</script>
-
-  <script>
-var myVar;
-
-function myFunction() {
-    myVar = setTimeout(showPage, 1700);
-}
-
-// $(window).on("load", function() {
-// preloaderFadeOutTime = 400;
-// function hidePreloader() {
-// var preloader = $(".spinner-wrapper");
-// preloader.fadeOut(preloaderFadeOutTime);
-// }
-// hidePreloader();
-// });
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-</script>
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+  </script>
 
 
 
