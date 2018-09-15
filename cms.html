@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>exx</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+
+    .info-color {
+    background-color: #000022!important;
+}
+
+.btn-outline-info {
+    border: 2px solid #000022!important;
+    background-color: transparent!important;
+    color: #000022!important;
+}
+.header {
+  background-color: #000022;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+.gradient {
+      background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.5)), to(rgba(29, 210, 177, 0.5)));
+      background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+    }
+
+
+
+    </style>
+</head>
+
+<body class="mask gradient" >
+<!-- style="display: flex;
+  justify-content: center;
+  align-items: center;"> -->
+
+<div id="myDIV" class="header">
+  <h1 style="margin:5px">RESTAURANT LOGIN</h1>
+  
+ 
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div style="display: flex;
+  justify-content: center;
+  margin-top: auto; margin-bottom: auto; ">
+
+  
+<div class="card" style="width: 50%; height: 50%;" >
+
+  <h5 class="card-header info-color white-text text-center py-4">
+    <strong>Sign In with your Restaurant ID</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+    <!-- Form -->
+    <div class="text-center" style="color: #757575;">
+
+      <!-- Email -->
+      <div class="md-form">
+        <input type="email" id="user_id" class="form-control">
+        <label>E-mail</label>
+      </div>
+
+      <!-- Password -->
+      <div class="md-form">
+        <input type="password" id="user_pass" class="form-control">
+        <label >Password</label>
+      </div>
+
+     <br>
+
+      <!-- Sign in button -->
+       <button class="btn btn-outline-info btn-rounded waves-effect z-depth-0 " onclick="updateData()"
+       style="border-radius: 50px;" >Sign in</button>
+
+    
+
+      
+    </div>
+    <!-- Form -->
+
+  </div>
+
+</div>
+</div>
+
+<script >
+
+
+    function updateData(){
+
+    var user_id = document.getElementById("user_id").value;
+    var user_pass = document.getElementById("user_pass").value;
+
+    if(user_id=="poptos@gmail.com" && user_pass=="poptos"){
+               
+               window.location = 'PoptosCMS.html';
+
+    
+    }
+    else{
+        window.alert("Wrong ID or Password");
+    }
+}
+
+
+</script>
+
+
+
+
+<!-- Material form login -->
+<!-- Default form login -->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
