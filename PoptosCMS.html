@@ -162,7 +162,7 @@ input {
   
 </ul>
   <div class="footer">
-  <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200;">SIGN OUT</h4></a>
+  <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200;" onclick="resetState()">SIGN OUT</h4></a>
 </div>
 
 
@@ -188,7 +188,7 @@ input {
 
     const fb_db = firebase.database().ref()
 
-    user_name = "No waiting time";
+    user_name = "No waiting ";
     fb_db.child('user_name').set(user_name)
 
     function updateData(){
@@ -305,7 +305,10 @@ list.addEventListener('click', function(ev) {
 }, false);
 
 
-
+function resetState() {
+  count = 0;
+  updateData();
+}
 
 // Create a new list item when clicking on the "Add" button
 function newElement() { 
