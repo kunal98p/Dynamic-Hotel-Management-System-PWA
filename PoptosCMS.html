@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 <style>
 
 /* Include the padding and border in an element's total width and height */
@@ -141,12 +143,37 @@ input {
    width: 10%
 }
 
+   .footer1 {
+   position: fixed;
+   left: 10px;
+   bottom: 0;
+
+   background-color: ;
+   color: white;
+   text-align: center;
+   width: 10%
+}
+
 
 </style>
 </head>
-<body class="mask gradient">
+<body class="mask gradient" >
+
+<div class="row no-gutter fullwidth" >
+	<div class="col-lg-12 col-md-12" >
+ <marquee scrolldelay="150" scrollamount="15" onmouseover="this.stop();" onmouseout="this.start();">
+
+<span class="label label-primary" style="background:#000022; font-weight: 300; padding-top: 20px; padding-bottom: 20px;">
+	<font style="color: white;">*Poptos Content Management System To implement Waiting List </font>
+</span></strong>
+ </marquee><br>
+</div>
+</div>
 
 <div id="myDIV" class="header">
+
+
+
   <h1 style="margin:5px ; font-size: 50px; font-weight: 200;">POPTOS CMS</h1>
   <h3 style="margin:5px; font-weight: 200; ">(WAITING GUEST LIST)</h3>
   <br>
@@ -161,15 +188,21 @@ input {
 <ul id="myUL">
   
 </ul>
+
   <div class="footer">
-  <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200;" onclick="resetState()">SIGN OUT</h4></a>
+ 	 <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200;" onclick="resetState()">SIGN OUT</h4></a>
 </div>
 
 
 
-<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+
+ 
+
+
+
   <script>
   var count = 0;
+
 
   var config = {
     apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
@@ -179,19 +212,36 @@ input {
     storageBucket: "management-a62a2.appspot.com",
     messagingSenderId: "972960577898"
   };
+
+
   firebase.initializeApp(config);
 
 
+ function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+  }
+
+
+ var d = new Date();
+ 
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+   
 
 
     
 
     const fb_db = firebase.database().ref()
 
-    user_name = "No waiting ";
+    user_name = "No waiting time";
     fb_db.child('user_name').set(user_name)
 
     function updateData(){
+
+
 
       
       
@@ -269,7 +319,13 @@ input {
 
 
   }
- 
+
+
+ function resetState() {
+	count = 0;
+	updateData();
+}
+
 // Create a "close" button and append it to each list item
 
 var myNodelist = document.getElementsByTagName("LI");
@@ -280,7 +336,6 @@ for (i = 0; i < myNodelist.length; i++) {
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
-
   
 }
 
@@ -305,35 +360,66 @@ list.addEventListener('click', function(ev) {
 }, false);
 
 
-function resetState() {
-  count = 0;
-  updateData();
-}
+
 
 // Create a new list item when clicking on the "Add" button
 function newElement() { 
 
 
+
+ function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+  }
+
+
+ var d = new Date();
+ 
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+  
+  
+
+
   count=count+1;
   
   var li = document.createElement("li");
+
+  
+
   var inputValue = document.getElementById("myInput").value;
+
+
+
+
+
   var t = document.createTextNode(inputValue);
+
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
    
 
   } else {
-    document.getElementById("myUL").appendChild(li);
+    var x = document.getElementById("myUL").appendChild(li);
     
     
   }
 
   document.getElementById("myInput").value = "";
   var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  var txt = document.createTextNode("\u00D7"); 
+  var txt3 = document.createTextNode("         ");
+  var txt1 = document.createTextNode("(offline)   ");
+  var s = document.createTextNode("Time" +"-"+h +":" +m );
+ 
+
   span.className = "close";
+  span.appendChild(txt1);
+  span.appendChild(txt3);
+  span.appendChild(s);
   span.appendChild(txt);
   li.appendChild(span);
 
@@ -348,11 +434,139 @@ function newElement() {
   }
 
 }
+ 
 
+
+
+
+
+
+
+
+  
+
+var inputValue;
+   
+var dbRef = firebase.database().ref().child('object');
+var dbRef1 = dbRef.child('name');
+name="no reseration";
+ 		dbRef1.child('name').set(name);
+
+
+ 	// dbRef.on("value",function(snapshot) {
+ 		
+
+  // 		console.log(snapshot.val();
+  		
+  // });	
+
+
+var inputValue = document.getElementById("myInput").value;
+
+
+ 	dbRef1.on('child_added' , function(snap){ 
+ 		 const li = document.createElement("li");
+ 		 // var kunal = snap.val();
+ 		 // var keys = snap.key;
+ 		 // var dbRef2 = dbRef1.child('keys');
+ 		 // console.log(keys);
+ 		li.innerText =  snap.val();
+ 		 li.id = snap.key;
+ 		// var x = document.getElementById("myUL").appendChild(li);
+
+
+  
+// document.getElementById("myInput").value = "";
+//   var span = document.createElement("SPAN");
+//   var txt = document.createTextNode("\u00D7");
+
+//   span.className = "close";
+//   span.appendChild(txt);
+//   li.appendChild(span);
+  
+//    for (i = 0; i < close.length; i++) {
+//     close[i].onclick = function() {
+//     	     dbRef1.on('child_removed' , function(snap){ 
+//  		 const liToRemove = document.getElementById(snap.key);
+//  		 liToRemove.remove();
+
+
+//  	});
+//       var div = this.parentElement;
+//       div.style.display = "none";
+//         count=count-1;
+//        updateData();
+//     }
+// }
+
+});
+
+
+
+
+
+   
+
+   
+
+ 	dbRef1.on('child_changed' , function(snap){ 
+ 		 // const liChanged = document.getElementById(snap.key);
+ 		 // liChanged.innerText = snap.val();
+ 		 count=count+1;
+ 		 updateData();
+ 		 console.log(snap.val());
+ 		 const li = document.createElement("li");
+ 		 // var kunal = snap.val();
+ 		 // var keys = snap.key;
+ 		 // var dbRef2 = dbRef1.child('keys');
+ 		 // console.log(keys);
+ 		li.innerText =  snap.val();
+ 		 li.id = snap.key;
+ 		var x = document.getElementById("myUL").appendChild(li);
+
+
+  
+document.getElementById("myInput").value = "";
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+   var txt1 = document.createTextNode("(online)   ");
+var txt3 = document.createTextNode("         ");
+  var s = document.createTextNode("Time" +"-"+h +":" +m );
+ 
+
+  span.className = "close";
+  span.appendChild(txt1);
+ 
+  span.appendChild(s);
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  
+   for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+    	     dbRef1.on('child_removed' , function(snap){ 
+ 		 const liToRemove = document.getElementById(snap.key);
+ 		 liToRemove.remove();
+
+
+ 	});
+      var div = this.parentElement;
+      div.style.display = "none";
+        count=count-1;
+       updateData();
+    }
+}
+
+
+
+ 	});
+
+ 
+
+	
 
 
 </script>
-
 
 </body>
 </html>

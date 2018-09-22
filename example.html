@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Client</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<style>
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+  padding-top: 60px; 
+}
+
+/* Remove margins and padding from the list */
+
+
+/* Style the header */
+.header {
+  background-color: #000022;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 30%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+.gradient {
+      background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+     /* background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.5)), to(rgba(29, 210, 177, 0.5)));*/
+      background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+      background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
+   }
+
+
+
+
+</style>
+</head>
+<body class="mask gradient"  >
+
+<div id="myDIV" class="header">
+  <h1 style="margin:5px ; font-size: 50px; font-weight: 200;">RESERVE YOUR PLACE</h1>
+  <h3 style="margin:5px; font-weight: 200; ">(GUEST ENTRY)</h3>
+  <br>
+  
+
+  <input type="text" id="myInput" placeholder="Name...">
+  <span ><input type="text" id="Input" placeholder="No of person..."></span>
+  <span onclick="createData()" class="addBtn">Add</span>
+   <span id="test2" style="font-size: 40px; color: green;"></span>
+  
+
+
+</div>
+
+
+
+<h1 id="demo" style="color: green; text-align: center;"></h1>
+
+
+ 
+
+
+
+  <script>
+
+
+  var config = {
+    apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
+    authDomain: "management-a62a2.firebaseapp.com",
+    databaseURL: "https://management-a62a2.firebaseio.com",
+    projectId: "management-a62a2",
+    storageBucket: "management-a62a2.appspot.com",
+    messagingSenderId: "972960577898"
+  };
+
+
+  firebase.initializeApp(config);
+
+
+
+
+
+    
+
+   var inputValue;
+   
+var dbRef = firebase.database().ref().child('object');
+var dbRef1 = dbRef.child('name');
+
+    function createData(){
+
+
+
+      
+      
+
+   
+    var inputValue = document.getElementById("myInput").value;
+    name = inputValue;
+
+ if (inputValue === '') {
+    alert("You must write something! Refresh and Write");
+   
+
+  } else {
+    
+
+    dbRef1.child('name').set(name);
+  document.getElementById("demo").innerHTML = "Your Place has been Reserved Successfully :) ";
+ 
+  
+}
+ document.getElementById("myInput").value = "";
+ document.getElementById("Input").value = "";
+
+
+  }
+
+  
+  
+   
+  
+</script>
+
+<script type="text/javascript">
+
+
+
+
+  $(document).ready(function(){
+    $(".addBtn").on("click", function(){
+          $(this).hide();
+          $("#myInput").hide();
+          $("#Input").hide();
+          $("#test2").html("THANK YOU!!");
+      
+
+
+    });
+});
+
+</script>
+
+
+</body>
+</html>
