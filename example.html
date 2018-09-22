@@ -90,7 +90,7 @@ input {
   <input type="text" id="myInput" placeholder="Name...">
   <span ><input type="text" id="Input" placeholder="No of person..."></span>
   <span onclick="createData()" class="addBtn">Add</span>
-   <span id="test2" style="font-size: 40px; color: green;"></span>
+   <span id="test2" style="font-size: 25px; color: green;"></span>
   
 
 
@@ -140,13 +140,24 @@ var dbRef1 = dbRef.child('name');
 
    
     var inputValue = document.getElementById("myInput").value;
+    var input = document.getElementById("Input").value;
     name = inputValue;
 
- if (inputValue === '') {
-    alert("You must write something! Refresh and Write");
+ if (inputValue === '' || isNaN(input)) {
+    alert("You must write something Valid! Refresh and Try Again");
    
 
-  } else {
+  }
+
+  else if(input>15){
+  	alert("Limit Exceeded");
+  }
+
+   else if(input<0){
+  	alert("Invalid Input");
+  }
+
+   else if(inputValue !== '' && (input>0 && input<15 )){
     
 
     dbRef1.child('name').set(name);
@@ -176,7 +187,7 @@ var dbRef1 = dbRef.child('name');
           $(this).hide();
           $("#myInput").hide();
           $("#Input").hide();
-          $("#test2").html("THANK YOU!!");
+          $("#test2").html("Refresh To Enter Again!!");
       
 
 
