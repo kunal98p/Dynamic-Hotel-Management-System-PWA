@@ -6,10 +6,7 @@
 <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-  if(!window.parentPage)
-{
-    window.location.href = "https://kunal98p.github.io/cms.html"
-}
+
 </script>
 <style>
 
@@ -197,7 +194,7 @@ input {
 </ul>
 
   <div class="footer">
- 	 <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200;" onclick="resetState()">SIGN OUT</h4></a>
+ 	 <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200;" onclick="resetState();logOut()">SIGN OUT</h4></a>
 </div>
 
 
@@ -571,9 +568,12 @@ var txt3 = document.createTextNode("         ");
  
 
 	
+ function logOut(){
+    const auth = firebase.auth();
+    firebase.auth().signOut();
+  }
 
 
-</script>
 </script>
 <script type="text/javascript">
     window.onbeforeunload = function() {
@@ -588,7 +588,16 @@ return false;
 });
 });
 
+
 </script>
+
+
+
+  
+
+
+</script>
+
 
 
 </body>

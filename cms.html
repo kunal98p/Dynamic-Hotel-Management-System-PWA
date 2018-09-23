@@ -39,23 +39,7 @@
       background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
       background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
     }
-  .animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
 
-@-webkit-keyframes animatebottom {
-  from { bottom:-30px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-30px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
 
 
     </style>
@@ -82,14 +66,14 @@
   margin-top: auto; margin-bottom: auto; ">
 
   
-<div class="card animate-bottom" style="width: 50%; height: 50%;" >
+<div class="card" style="width: 50%; height: 50%;" >
 
   <h5 class="card-header info-color white-text text-center py-4">
     <strong>Sign In with your Restaurant ID</strong>
   </h5>
 
   <!--Card content-->
-  <div class="card-body px-lg-5 pt-0 ">
+  <div class="card-body px-lg-5 pt-0">
 
     <!-- Form -->
     <div class="text-center" style="color: #757575;">
@@ -109,8 +93,8 @@
      <br>
 
       <!-- Sign in button -->
-       <button class="btn btn-outline-info btn-rounded waves-effect z-depth-0 " onclick="updateData()"
-       style="border-radius: 50px;" >Sign in</button>
+       <button class="btn btn-outline-info btn-rounded waves-effect z-depth-0 " 
+       style="border-radius: 50px;" id="btnLogin">Sign in</button>
 
     
 
@@ -123,7 +107,7 @@
 </div>
 </div>
 
-<script >
+<!-- <script >
 
 
     function updateData(){
@@ -143,8 +127,46 @@
 }
 
 
-</script>
+</script> -->
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script type="text/javascript">
+  
+  var config = {
+    apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
+    authDomain: "management-a62a2.firebaseapp.com",
+    databaseURL: "https://management-a62a2.firebaseio.com",
+    projectId: "management-a62a2",
+    storageBucket: "management-a62a2.appspot.com",
+    messagingSenderId: "972960577898"
+  };
+  firebase.initializeApp(config);
 
+
+ const user_id = document.getElementById("user_id");
+    const user_pass = document.getElementById("user_pass");
+      const btnLogin = document.getElementById("btnLogin");
+
+btnLogin.addEventListener('click', e => {
+
+const email = user_id.value;
+const password = user_pass.value;
+const auth = firebase.auth();
+
+const promise = auth.signInWithEmailAndPassword(email,password);
+promise.catch(e => alert("Error"));
+
+
+
+});
+
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if(firebaseUser){
+  window.location = 'PoptosCMS.html'; 
+}
+});
+</script>
+  
 
 
 
