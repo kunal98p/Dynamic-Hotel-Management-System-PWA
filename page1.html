@@ -123,21 +123,21 @@ div {
               <br>
            <div class="row">
             <div class="col-sm-4"><h6>Hot & Spicy</h6></div>
-            <div class="col-sm-8"><pre id="bigThree"></pre></div>
+            <div class="col-sm-8"><pre id="bigFive"></pre></div>
           </div>
 
               <br>
               <br>
            <div class="row">
             <div class="col-sm-4"><h6>Quiches</h6></div>
-            <div class="col-sm-8"><pre id="bigThree"></pre></div>
+            <div class="col-sm-8"><pre id="bigSix"></pre></div>
           </div>
 
               <br>
               <br>
            <div class="row">
             <div class="col-sm-4"><h6>Recharge cafe</h6></div>
-            <div class="col-sm-8"><pre id="bigThree"></pre></div>
+            <div class="col-sm-8"><pre id="bigSeven"></pre></div>
           </div>
               <br>
               <br>
@@ -145,7 +145,7 @@ div {
 
            <div class="row">
             <div class="col-sm-4"><h6>Khetlapa</h6></div>
-            <div class="col-sm-8"><pre id="bigThree"></pre></div>
+            <div class="col-sm-8"><pre id="bigEight"></pre></div>
           </div>
 
         </div>
@@ -406,22 +406,218 @@ var dbRef = firebase.database().ref().child('text3');
   
 dbRef.on('value',snap =>bigFour.innerText = snap.val());
 
+}
 
-// var config = {
-//       apiKey: "AIzaSyBz6_Ux4XZMkA8P_vyMVZbO2WeUqyB4mKI",
-//       authDomain: "test-1a59c.firebaseapp.com",
-//       databaseURL: "https://test-1a59c.firebaseio.com",
-//       projectId: "test-1a59c",
-//       storageBucket: "test-1a59c.appspot.com",
-//       messagingSenderId: "440445442103"
-//     };
-//     firebase.initializeApp(config);
+if(h>=21 && h<23){
+var bigFive = document.getElementById('bigFive');
+  
+var dbRef = firebase.database().ref().child('text');
+ dbRef.on('value',snap =>bigFive.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
 
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+
+///dhosha.com//Six
+if(h>=21 && h<23){
+var bigSix = document.getElementById('bigSix');
+  
+var dbRef = firebase.database().ref().child('text4');
+ dbRef.on('value',snap =>bigSix.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+
+////pep-pizza///Seven
+if(h>=21 && h<23){
+var bigSeven = document.getElementById('bigSeven');
+  
+var dbRef = firebase.database().ref().child('text');
+ dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+
+
+if(h>=21 && h<23){
+var bigEight = document.getElementById('bigEight');
+  
+var dbRef = firebase.database().ref().child('text4');
+ dbRef.on('value',snap =>bigEight.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
+
+		  
+
+var bigEight= document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigEight = document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigEight = document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigEight = document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
 
 
       
 
-}
 </script>
 
 
@@ -434,37 +630,6 @@ dbRef.on('value',snap =>bigFour.innerText = snap.val());
 
 </script>
 
-
-
-  <!-- <script>
-  // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBz6_Ux4XZMkA8P_vyMVZbO2WeUqyB4mKI",
-      authDomain: "test-1a59c.firebaseapp.com",
-      databaseURL: "https://test-1a59c.firebaseio.com",
-      projectId: "test-1a59c",
-      storageBucket: "test-1a59c.appspot.com",
-      messagingSenderId: "440445442103"
-    };
-    firebase.initializeApp(config);
-
-
-
-      var bigThree = document.getElementById('bigThree');
-  
-
-    var dbRef = firebase.database().ref().child('user_name');
-    
-    dbRef.on('value',snap =>bigThree.innerHTML = snap.val());
-    
-    // var dbRef = firebase.database().ref().child('user_email');
-    
-    // dbRef.on('value',snap =>bigTwo.innerHTML = snap.val());
-
-
-
-
-  </script> -->
 
 </body>
 </html>
