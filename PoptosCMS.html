@@ -4,6 +4,7 @@
 	<title>Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 
 /* Include the padding and border in an element's total width and height */
@@ -567,6 +568,22 @@ var txt3 = document.createTextNode("         ");
 
 
 </script>
+</script>
+<script type="text/javascript">
+    window.onbeforeunload = function() {
+        return "Dude, are you sure you want to leave? Think of the kittens!";
+    }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+$(document).on("contextmenu", function () {
+return false;
+});
+});
+
+</script>
+
 
 </body>
 </html>
