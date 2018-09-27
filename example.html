@@ -85,7 +85,24 @@ input {
       background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
    }
 
+      .animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
 
+@-webkit-keyframes animatebottom {
+  from { bottom:-30px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-30px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+   
 
 
 </style>
@@ -96,7 +113,7 @@ input {
 
 <div class="mask rgba-grey-light">
 
-<div id="myDIV" class="header" style="  margin-top: 10%; margin-left: 2%; margin-right: 2%; border-radius: 5px;">
+<div id="myDIV" class="header animate-bottom" style="  margin-top: 10%; margin-left: 2%; margin-right: 2%; border-radius: 5px;">
   <h1 style="margin:5px ; font-size: 50px; font-weight: 200; margin-top: 5%;">RESERVE YOUR PLACE</h1>
   <br>
   <h3 style="margin:5px; font-weight: 200; ">(GUEST ENTRY)</h3>

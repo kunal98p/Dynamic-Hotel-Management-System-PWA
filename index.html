@@ -198,7 +198,7 @@
 
 
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   #xx {
     font-size: 30px;
   }
@@ -225,7 +225,58 @@
 
 
 
+}*/
+
+.show{
+  display: none;
+
 }
+.show1{
+  display: none;
+
+}
+
+@media screen and (max-width: 600px) {
+  .view {
+
+    display: none;
+  }
+  .navbar , footer{
+
+    display: none;
+  }
+  #changeText{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .show {
+
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+  color: red;
+  padding-top:  50%;
+  font-size: 35px ;
+  
+  
+  }
+    .show1{
+
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+  color: red;
+  padding-top:  30%;
+  font-size: 20px ;
+  
+  
+  }
+}
+
 
 
   </style>
@@ -234,6 +285,9 @@
 <body onload="myFunction();getLocation()">
 
 <!-- preloader -->
+  <div class="show"  >Sorry! We are Currently Working on Mobile Support :/  </div>
+  <div class="show1"  >Switch to Desktop Version...  </div>
+
 
 <div id = "loader" class="spinner-wrapper">
   <div  class="spinner">
@@ -262,7 +316,7 @@
 
 <i class="fa fa-users" aria-hidden="true" style="padding-right: 5px;" ></i>
 
-LOGIN</strong>
+RESTAURANT LOGIN</strong>
        </a>
        </div>
 
@@ -392,9 +446,7 @@ function showPosition(position) {
   
                
           }
-         console.log(position.coords.latitude)
-
-         console.log(position.coords.longitude);
+      
       
        var myCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
