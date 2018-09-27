@@ -2,7 +2,20 @@
 <html>
 <head>
 <title>Client</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>exx</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+  
+
 <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -11,10 +24,6 @@
 <style>
 
 /* Include the padding and border in an element's total width and height */
-* {
-  box-sizing: border-box;
-  padding-top: 60px; 
-}
 
 /* Remove margins and padding from the list */
 
@@ -36,14 +45,15 @@
 
 /* Style the input */
 input {
-  margin: 0;
+  
   border: none;
-  border-radius: 0;
+  
   width: 30%;
   padding: 10px;
   float: left;
   font-size: 16px;
   margin-right: 20px;
+  border-radius: 7px;
 }
 
 
@@ -60,6 +70,7 @@ input {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0;
+  border-radius: 8px;
 }
 
 .addBtn:hover {
@@ -79,18 +90,25 @@ input {
 
 </style>
 </head>
-<body class="mask gradient"  >
+<body>
 
-<div id="myDIV" class="header">
-  <h1 style="margin:5px ; font-size: 50px; font-weight: 200;">RESERVE YOUR PLACE</h1>
+   <div class="view full-page-intro parallax" style="background-image: url('pic1.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+<div class="mask rgba-grey-light">
+
+<div id="myDIV" class="header" style="  margin-top: 10%; margin-left: 2%; margin-right: 2%; border-radius: 5px;">
+  <h1 style="margin:5px ; font-size: 50px; font-weight: 200; margin-top: 5%;">RESERVE YOUR PLACE</h1>
+  <br>
   <h3 style="margin:5px; font-weight: 200; ">(GUEST ENTRY)</h3>
   <br>
   
 
   <input type="text" id="myInput" placeholder="Name...">
   <span ><input type="text" id="Input" placeholder="No of person..."></span>
+
   <span onclick="createData()" class="addBtn">Add</span>
    <span id="test2" style="font-size: 25px; color: green;"></span>
+
   
 
 
@@ -100,6 +118,8 @@ input {
 
 <h1 id="demo" style="color: green; text-align: center;"></h1>
 
+</div>
+</div>
 
  
 
@@ -195,6 +215,16 @@ var dbRef1 = dbRef.child('name');
 });
 
 </script>
+
+   <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 
 
 </body>

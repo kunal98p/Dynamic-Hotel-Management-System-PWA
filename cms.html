@@ -16,6 +16,7 @@
     <link href="css/style.css" rel="stylesheet">
     <style type="text/css">
 
+
     .info-color {
     background-color: #000022!important;
 }
@@ -39,21 +40,38 @@
       background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
       background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
     }
-    @media screen and (max-width: 600px) {
-  #xy {
-     margin-left: -100px; margin-right: -100px; 
-  }
 
+      .animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-30px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-30px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+    
 
 
 
     </style>
 </head>
 
-<body class="mask gradient" >
+<body >
 <!-- style="display: flex;
   justify-content: center;
   align-items: center;"> -->
+ <div class="view full-page-intro parallax " style="background-image: url('pic1.jpg'); background-repeat: no-repeat; background-size: cover; position: relative;" >
+
+<div class="mask rgba-grey-light">
 
 <div id="myDIV" class="header">
   <h1 style="margin:5px">RESTAURANT LOGIN</h1>
@@ -68,12 +86,12 @@
 
 <div style="display: flex;
   justify-content: center;
-  margin-top: auto; margin-bottom: auto;" id="xy" >
+  margin-top: auto; margin-bottom: auto; " class="animate-bottom">
 
   
-<div class="card " style="width: 50%; height: 50%;" >
+<div class="card" style="width: 50%; height: 50%; " >
 
-  <h5 class="card-header info-color white-text text-center py-4 ">
+  <h5 class="card-header info-color white-text text-center py-4">
     <strong>Sign In with your Restaurant ID</strong>
   </h5>
 
@@ -111,6 +129,9 @@
 
 </div>
 </div>
+</div>
+</div>
+
 
 <!-- <script >
 
@@ -135,7 +156,7 @@
 </script> -->
 <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 <script type="text/javascript">
-  
+	
   var config = {
     apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
     authDomain: "management-a62a2.firebaseapp.com",
@@ -166,12 +187,12 @@ promise.catch(e => alert("Error"));
 
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
-  if(firebaseUser){
-  window.location = 'PoptosCMS.html'; 
+	if(firebaseUser){
+	window.location = 'new/PoptosCMS.html';	
 }
 });
 </script>
-  
+	
 
 
 
