@@ -2,10 +2,21 @@
 <html>
 <head>
 	<title>Admin</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+  
+
 <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
 
 </script>
 <style>
@@ -36,6 +47,11 @@ ul li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-radius: 7px;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 0.5%;
+  opacity: 0.8;
 
 }
 
@@ -69,6 +85,7 @@ ul li.checked::before {
   height: 15px;
   width: 7px;
 
+
 }
 
 /* Style the close button */
@@ -90,6 +107,9 @@ ul li.checked::before {
   padding: 30px 40px;
   color: white;
   text-align: center;
+  border-radius: 7px;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 /* Clear floats after the header */
@@ -103,17 +123,19 @@ ul li.checked::before {
 input {
   margin: 0;
   border: none;
-  border-radius: 0;
+
   width: 75%;
   padding: 10px;
   float: left;
   font-size: 16px;
+  border-radius: 3px;
+  margin-right: 2%;
 }
 
 /* Style the "Add" button */
 .addBtn {
   padding: 10px;
-  width: 25%;
+  width: 20%;
   background: #d9d9d9;
   color: #555;
   float: left;
@@ -121,7 +143,7 @@ input {
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 0;
+  border-radius: 3px;
 }
 
 .addBtn:hover {
@@ -152,7 +174,7 @@ input {
    left: 10px;
    bottom: 0;
 
-   background-color: ;
+
    color: white;
    text-align: center;
    width: 10%
@@ -161,7 +183,11 @@ input {
 
 </style>
 </head>
-<body class="mask gradient" >
+<body >
+
+	<div class="view full-page-intro parallax" style="background-image: url('http://vwcfurniture.com/wp-content/uploads/2017/04/port_poptos_4.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+		<div class="mask rgba-grey-light">
 
 <div class="row no-gutter fullwidth" >
 	<div class="col-lg-12 col-md-12" >
@@ -188,13 +214,13 @@ input {
 
 
 </div>
-
+<br>
 <ul id="myUL">
   
 </ul>
 
-  <div class="footer">
- 	 <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200;" onclick="resetState();logOut()">SIGN OUT</h4></a>
+  <div class="footer" style="border-radius: 5px;">
+ 	 <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200; padding-top: 15px;" onclick="resetState();logOut()">SIGN OUT</h4></a>
 </div>
 
 
@@ -589,6 +615,7 @@ return false;
 });
 
 
+
 </script>
 
 
@@ -596,8 +623,15 @@ return false;
   
 
 
-</script>
-
+   <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 
 
 </body>
