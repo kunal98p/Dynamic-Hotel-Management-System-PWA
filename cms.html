@@ -89,14 +89,14 @@
   margin-top: auto; margin-bottom: auto; " class="animate-bottom">
 
   
-<div class="card" style="width: 50%; height: 50%; " >
+<div class="card" style="width: 50%; height: 50%; opacity: 0.9; border-radius: 20px;" >
 
-  <h5 class="card-header info-color white-text text-center py-4">
+  <h5 class="card-header info-color white-text text-center py-4" >
     <strong>Sign In with your Restaurant ID</strong>
   </h5>
 
   <!--Card content-->
-  <div class="card-body px-lg-5 pt-0">
+  <div class="card-body px-lg-5 pt-0" style="">
 
     <!-- Form -->
     <div class="text-center" style="color: #757575;">
@@ -117,7 +117,7 @@
 
       <!-- Sign in button -->
        <button class="btn btn-outline-info btn-rounded waves-effect z-depth-0 " 
-       style="border-radius: 50px;" id="btnLogin">Sign in</button>
+       style="border-radius: 50px;" id="btnLogin" onload="onloader()">Sign in</button>
 
     
 
@@ -129,6 +129,8 @@
 
 </div>
 </div>
+
+
 </div>
 </div>
 
@@ -191,6 +193,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 	window.location = 'PoptosCMS.html';	
 }
 });
+
+
 </script>
 	
 

@@ -187,7 +187,7 @@ input {
   <script>
 
 
-  var config = {
+var config = {
     apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
     authDomain: "management-a62a2.firebaseapp.com",
     databaseURL: "https://management-a62a2.firebaseio.com",
@@ -195,10 +195,12 @@ input {
     storageBucket: "management-a62a2.appspot.com",
     messagingSenderId: "972960577898"
   };
-
-
   firebase.initializeApp(config);
 
+  // Initialize Cloud Firestore through Firebase
+var db = firebase.firestore();
+const settings = {/* your settings... */ timestampsInSnapshots: true};
+  db.settings(settings);
 
 
 
@@ -229,18 +231,34 @@ var dbRef1 = dbRef.child('name');
   }
 
   else if(input>15){
-  	alert("Limit Exceeded");
+    alert("Limit Exceeded");
   }
 
    else if(input<0){
-  	alert("Invalid Input");
+    alert("Invalid Input");
   }
 
    else if(inputValue !== '' && (input>0 && input<15 )){
     
+var d = new Date();
+var n = d.getTime();
 
-    dbRef1.child('name').set(name);
-  document.getElementById("demo").innerHTML = "Your Place has been Reserved Successfully :) ";
+
+      // Add a new document in collection "cities"
+      db.collection("List").doc().set({
+          name: inputValue,
+          number: input,
+          time: n,
+          entry: "online"
+          
+      })
+      .then(function() {
+          console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+          console.error("Error writing document: ", error);
+      });
+
  
   
 }
