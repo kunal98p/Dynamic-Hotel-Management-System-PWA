@@ -108,7 +108,7 @@ ul li.checked::before {
   padding: 30px 40px;
   color: white;
   text-align: center;
-  border-radius: 7px;
+  border-radius: 10px;
   margin-left: 3%;
   margin-right: 3%;
 }
@@ -151,6 +151,23 @@ input {
   background-color: #bbb;
 }
 
+.addBtn1 {
+  padding: 5px;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 25px;
+  width: 100px;
+}
+
+.addBtn1:hover {
+  background-color: #bbb;
+}
+
 .gradient {
       background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
       background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.5), rgba(29, 210, 177, 0.5) 100%);
@@ -161,7 +178,7 @@ input {
 
    .footer {
    position: fixed;
-   right: 10px;
+   right: 2%;
    bottom: 0;
 
    background-color: #000022;
@@ -181,21 +198,57 @@ input {
    width: 10%
 }
 pre{
-      background: grey;
+      background: #f9f9f9;
       padding-top: 10px;
       padding-bottom: 10px;
       border-radius: 5px;
-      width: 35%; 
+      width: 80%; 
     }
+
+/*.circle {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+  border-radius: 50%;
+}
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+}
+*/
+.rectangle1 {
+  height: 150px;
+  width: 200px;
+  background-color:   #404040;
+  border-radius: 7px;
+  opacity: 0.85;
+}
+
+.rectangle2 {
+  height: 150px;
+  width: 350px;
+  background-color:   #404040;
+  border-radius: 7px;
+   opacity: 0.85;
+}
+
+.rectangle3 {
+  height: 150px;
+  width: 300px;
+  background-color:   #404040;
+  border-radius: 7px;
+   opacity: 0.85;
+}
 
 
 </style>
 </head>
 <body >
 
-  <div class="view full-page-intro parallax" style="background-image: url('http://vwcfurniture.com/wp-content/uploads/2017/04/port_poptos_4.jpg'); background-repeat: no-repeat; background-size: cover;">
+  <div class="view full-page-intro parallax" style="background-image: url('http://vwcfurniture.com/wp-content/uploads/2017/04/port_poptos_4.jpg'); background-repeat: no-repeat; background-size: cover; ">
 
-    <div class="mask rgba-grey-light">
+    <div class="mask rgba-grey-light" style=" overflow-y: scroll;">
 
 <div class="row no-gutter fullwidth" >
   <div class="col-lg-12 col-md-12" >
@@ -225,14 +278,51 @@ pre{
 </div>
 <br>
 
-      <ul id="myUL">
-  
-      </ul>
+  <div class="row"  >
+    <div class="col-sm" >
+      
+       <ul id="myUL" style="margin-left: 3%; margin-bottom: 2%">
+        
+       </ul>
+ 
+    </div>
+
+
+          <div class="col-sm"  style="justify-content: center; align-items: center; display: flex;">
+            <div style="  display: flex;flex-direction: column;justify-content: center;align-items: center; " >
+            <div class="rectangle1" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+          <p style="color: white; ">Table of 3</p>
+          <pre id="job1" style="padding-left: 3%;">Vacunt</pre>
+          <span onclick="schedular1();sub()" class="addBtn1" >Bill</span>
+        </div>
+      
+        <br>
+       
+        <div class="rectangle3" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+          <p style="color: white;">Table of 6</p>
+          
+          <pre id="job2" style="padding-left: 3%;">Vacunt</pre>
+             <span onclick="schedular2();sub()" class="addBtn1" >Bill</span>
+        </div >
+        <br>
+      
+        <div class="rectangle2" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+          <p style="color: white;">Table of 8</p>
+          <pre id="job3" style="padding-left: 3%;">Vacunt</pre>
+     
+             <span onclick="schedular3();sub()" class="addBtn1" >Bill</span>
+     
+        </div>
+      </div>
+    </div>
+  </div>
+
+     
 
 
 
   <div class="footer" style="border-radius: 5px;">
-   <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200; padding-top: 15px;" onclick="resetState();logOut()">SIGN OUT</h4></a>
+   <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200; padding-top: 15px; " onclick="resetState();logOut()">SIGN OUT</h4></a>
 </div>
 
 
@@ -244,7 +334,7 @@ pre{
 
   <script>
   var count = 0;
-
+  var id=0;
 
 var config = {
     apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
@@ -274,12 +364,6 @@ const settings = {/* your settings... */ timestampsInSnapshots: true};
  
  //    var h = addZero(d.getHours());
  //    var m = addZero(d.getMinutes());
-   
-
-
-    
-
-    
 
     user_name = "No waiting time";
     fb_db.child('user_name').set(user_name)
@@ -435,19 +519,10 @@ var n = d.getTime();
 
       
     
-     ;
 
 }
 
-// db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
-//      querySnapshot.docChanges().forEach(function(change) {
-//             if (change.type === "removed") {
 
-//               location.reload();
-
-// }
-// });
-// });
 
 
 
@@ -456,6 +531,7 @@ var n = d.getTime();
 db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
      querySnapshot.docChanges().forEach(function(change) {
             if (change.type === "added") {
+
 
 
 
@@ -472,7 +548,7 @@ updateData();
   var entry = change.doc.data().entry;
   var person = change.doc.data().number;
 
-li.setAttribute('data-id',change.doc.id);
+li.setAttribute('id',change.doc.id);
 
 
 
@@ -504,36 +580,60 @@ li.setAttribute('data-id',change.doc.id);
   span.appendChild(txt);
   li.appendChild(span);
 
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-        count=count-1;
-        updateData();
-      let id = this.parentElement.getAttribute('data-id');
 
-       db.collection("List").doc(id).delete().then(function() {
+  db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
+     querySnapshot.docChanges().forEach(function(change) {
+            if (change.type === "removed") {
 
+          
+                         
+                        var id = change.doc.id;
+                        console.log(id)
+                        var y =document.getElementById(id);
+                     
+                        console.log(y);
+  
+                             count=count-1;
+                              updateData(); 
+                            y.style.display = "none";
+               
 
-
-    console.log("Document successfully deleted!");
-}).catch(function(error) {
-    console.error("Error removing document: ", error);
-});
-    }
-
-  }
-
-}
-            
-            
-});
+                   }
+          });
+     
    });
 
 
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+     
+                    let id = this.parentElement.getAttribute('id');
+
+                        db.collection("List").doc(id).delete().then(function() {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                        count=count-1;
+                        updateData();
+                      console.log("Document successfully deleted!");
+                  }).catch(function(error) {
+                      console.error("Error removing document: ", error);
+                  });
+
+            }
+
+          }
+
+        }
+            
+            
+    });
+});
+
+
+
+         
 
  
-
   
  function logOut(){
 
@@ -545,31 +645,176 @@ li.setAttribute('data-id',change.doc.id);
 }
 
 
+var li=0;
+
+var job1 = document.getElementById("job1");
+var job2 = document.getElementById("job2");
+var job3 = document.getElementById("job3");
+
+
+function schedular1(){
+job1.innerHTML = 'UnOccupied';
+}
+
+
+function schedular2(){
+job2.innerHTML = 'UnOccupied';
+
+
+}
+
+function schedular3(){
+
+job3.innerHTML = 'UnOccupied';
+
+
+
+}
+function sub(){
+
+
+db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
+     querySnapshot.docChanges().forEach(function(change) {
+            if (change.type === "added") {
+
+                var inputValue = change.doc.data().name;
+               var inputValue1 = change.doc.data().number;
+              var time = change.doc.data().time;
+
+
+
+        if(job1.innerHTML==='UnOccupied' && inputValue1>0 && inputValue1<4){
+
+        
+              job1.innerHTML = 'Guest Name: '+inputValue;
+      
+              db.collection("List").doc(change.doc.id).delete().then(function() {
+          console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
+    }
+
+    else if(job2.innerHTML==='UnOccupied' && inputValue1>3 && inputValue1<8){
+
+
+              
+              var inputValue = change.doc.data().name;
+               var inputValue1 = change.doc.data().number;
+              var time = change.doc.data().time;
+            
+        
+              job2.innerHTML = 'Guest Name: '+inputValue;
+
+              db.collection("List").doc(change.doc.id).delete().then(function() {
+          console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
+      
+  
+    }
+
+    else if(job3.innerHTML==='UnOccupied' && inputValue1>7 && inputValue1<11){
+
+
+              
+              var inputValue = change.doc.data().name;
+               var inputValue1 = change.doc.data().number;
+              var time = change.doc.data().time;
+          
+        
+              job3.innerHTML = 'Guest Name: '+inputValue;
+
+              db.collection("List").doc(change.doc.id).delete().then(function() {
+          console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
+      
+
+    }
+
+  }
+
+        });
+    })
+}
+
+db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
+     querySnapshot.docChanges().forEach(function(change) {
+            if (change.type === "added") {
+
+                var inputValue = change.doc.data().name;
+               var inputValue1 = change.doc.data().number;
+              var time = change.doc.data().time;
+
+
+
+        if(job1.innerHTML==='Vacunt' && inputValue1>0 && inputValue1<4){
+
+        
+              job1.innerHTML = 'Guest Name: '+inputValue;
+      
+              db.collection("List").doc(change.doc.id).delete().then(function() {
+          console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
+    }
+
+    else if(job2.innerHTML==='Vacunt' && inputValue1>3 && inputValue1<8){
+
+
+              
+              var inputValue = change.doc.data().name;
+               var inputValue1 = change.doc.data().number;
+              var time = change.doc.data().time;
+            
+        
+              job2.innerHTML = 'Guest Name: '+inputValue;
+
+              db.collection("List").doc(change.doc.id).delete().then(function() {
+          console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
+      
+  
+    }
+
+    else if(job3.innerHTML==='Vacunt' && inputValue1>7 && inputValue1<11){
+
+
+              
+              var inputValue = change.doc.data().name;
+               var inputValue1 = change.doc.data().number;
+              var time = change.doc.data().time;
+          
+        
+              job3.innerHTML = 'Guest Name: '+inputValue;
+
+              db.collection("List").doc(change.doc.id).delete().then(function() {
+          console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
+      
+
+    }
+
+  }
+
+        });
+    })
+
+
   
 
 
 </script>
 
 
-
-
-<!-- <script type="text/javascript">
-    window.onbeforeunload = function() {
-        return "Dude, are you sure you want to leave? Think of the kittens!";
-    }
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function () {
-$(document).on("contextmenu", function () {
-return false;
-});
-});
-
-
-
-</script>
- -->
 
 
   
