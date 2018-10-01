@@ -29,7 +29,7 @@
   to{ bottom:0; opacity:1 }
 }
     
-  /* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #000022; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+  /* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; position: fixed;} /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #000022; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
 
   
 
@@ -79,8 +79,7 @@ div {
     display: table;
     /* content: " "; */
 }
-
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   canvas{
   	display: none;	
   }
@@ -89,18 +88,19 @@ h6{
 	font-size: 20px;
 }
 
-}
+}*/
+/**/
 
   </style>
 </head>
 <body>
 
-<div id="particles-js" >
-  <div class="text-block container" > 
+<div id="particles-js" style="position: fixed; overflow-y: scroll;">
+  <div class="text-block container"  >
 
 
       <div id = "demo" >
-       <div class="container animate-bottom" style="margin-top: 50px";>
+       <div class="container animate-bottom" style="margin-top: 50px; ">
 
           <div class="row">
             <div class="col-sm-4"><h6>Grill Kitchen</h6></div>
