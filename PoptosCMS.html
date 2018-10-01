@@ -205,6 +205,8 @@ pre{
       width: 80%; 
     }
 
+
+
 /*.circle {
   height: 50px;
   width: 50px;
@@ -241,10 +243,61 @@ pre{
    opacity: 0.85;
 }
 
+.spinner {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  background-color:#fff;
+
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color:#000022;
+z-index: 999999;
+}
 
 </style>
 </head>
-<body >
+<body onload="myFunction()">
+
+<div id = "loader" class="spinner-wrapper">
+<div class="spinner">
+  
+</div>
+</div>
+
+
+
+
 
   <div class="view full-page-intro parallax" style="background-image: url('http://vwcfurniture.com/wp-content/uploads/2017/04/port_poptos_4.jpg'); background-repeat: no-repeat; background-size: cover; ">
 
@@ -593,9 +646,7 @@ li.setAttribute('id',change.doc.id);
                      
                         console.log(y);
   
-                             // count=count-1;
-                             //  updateData();
-                              console.log(count); 
+                            
                             y.style.display = "none";
                
 
@@ -758,7 +809,18 @@ db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) 
 
 </script>
 
+  <script>
+      var myVar;
 
+      function myFunction() {
+          myVar = setTimeout(showPage, 1700);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+  </script>
 
 
   
