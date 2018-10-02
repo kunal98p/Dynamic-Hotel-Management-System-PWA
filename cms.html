@@ -31,6 +31,10 @@
   padding: 30px 40px;
   color: white;
   text-align: center;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 0px 0px 15px 15px;
+
 }
 
 .gradient {
@@ -89,9 +93,9 @@
   margin-top: auto; margin-bottom: auto; " class="animate-bottom">
 
   
-<div class="card" style="width: 50%; height: 50%; opacity: 0.9; border-radius: 20px;" >
+<div class="card" style="width: 50%; height: 50%; opacity: 0.9; border-radius: 15px 15px 15px 15px;" >
 
-  <h5 class="card-header info-color white-text text-center py-4" >
+  <h5 class="card-header info-color white-text text-center py-4" style="border-radius: 15px 15px 0px 0px;">
     <strong>Sign In with your Restaurant ID</strong>
   </h5>
 
@@ -117,7 +121,7 @@
 
       <!-- Sign in button -->
        <button class="btn btn-outline-info btn-rounded waves-effect z-depth-0 " 
-       style="border-radius: 50px;" id="btnLogin" onload="onloader()">Sign in</button>
+       style="border-radius: 50px;" id="btnLogin" onclick= "onloading()">Sign in</button>
 
     
 
@@ -130,9 +134,15 @@
 </div>
 </div>
 
+<br>
+<br>
+<div id="loading" style="color: white; text-align: center;"></div>
+<div id="loading1" style="color: white; text-align: center; display: none; font-weight: 400 ; font-size: 20px;">Authenticating , Please Wait....</div>
+
 
 </div>
 </div>
+
 
 
 <!-- <script >
@@ -205,6 +215,28 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         history.go(1);
     };
 </script>	
+<script type="text/javascript">
+  
+
+ function onloading(){
+
+var loading = document.getElementById("loading");
+var loading1 = document.getElementById("loading1");
+loading1.style.display = "block";
+loading.style.display = "block";
+
+loading.innerHTML = '<img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/source.gif" style="height: 35px; width: 35px; margin-left: 50%; ">';
+
+
+
+setTimeout(function(){
+loading.style.display = "none";
+loading1.style.display = "none";
+
+ }, 1500);
+}
+
+</script>
 
 
 
