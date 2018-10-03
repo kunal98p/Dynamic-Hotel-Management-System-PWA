@@ -114,9 +114,10 @@ h6{
           </div>
               <br>
               <br>
-          <div class="row">
+           <div class="row">
             <div class="col-sm-4"><h6>Poptos</h6>
-              <a href="example.html"><h5>*Click To Reserve a Seat in Advance  <img src="http://www.adit.ac.in/img/new.gif" style="height: 1em; width: 2em"></h5></a></div>
+              <a href="example.html " id="xxx" style="display: none;"><h5>*Click To Reserve a Seat in Advance  <img src="http://www.adit.ac.in/img/new.gif" style="height: 1em; width: 2em"></h5></a></div>
+
 
             
             <div class="col-sm-8"><pre id="bigThree"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre></div>
@@ -300,15 +301,25 @@ dbRef.on('value',snap =>bigTwo.innerText = snap.val());
 }
 
 // //poptos
+// //poptos
 if(1===1){
-  
+ var x = document.getElementById("xxx");
 var bigThree = document.getElementById('bigThree');
   
 
     var dbRef = firebase.database().ref().child('user_name');
     
-    dbRef.on('value',snap =>bigThree.innerHTML = snap.val());
+    dbRef.on('value',function(snap){
 
+    	s  = snap.val()
+    	bigThree.innerHTML=s;
+    	if(s!=="No Waiting "){
+    		x.style.display = "block";
+    	}
+    	else{
+    		x.style.display = "none";
+    	}
+    });
 }
    // var bigThree = document.getElementById('bigThree');
   
