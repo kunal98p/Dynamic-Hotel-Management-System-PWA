@@ -239,8 +239,24 @@ var dbRef1 = dbRef.child('name');
   }
 
    else if(inputValue !== '' && (input>0 && input<15 )){
-    
+
+   db.settings(settings);
+ function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+  }
+
+
+ // var d = new Date();
 var d = new Date();
+ 
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var time = h+':'+m;
+    console.log(time);
+
 var n = d.getTime();
 
 
@@ -249,7 +265,8 @@ var n = d.getTime();
           name: inputValue,
           number: input,
           time: n,
-          entry: "online"
+          entry: "online",
+          timeofday: time
           
       })
       .then(function() {

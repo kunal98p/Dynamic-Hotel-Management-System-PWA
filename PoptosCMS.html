@@ -562,7 +562,24 @@ list.addEventListener('click', function(ev) {
 
     function storeData(){
 
+
+   db.settings(settings);
+ function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+  }
+
+
+ // var d = new Date();
 var d = new Date();
+ 
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var time = h+':'+m;
+    console.log(time);
+
 var n = d.getTime();
 
 
@@ -575,7 +592,8 @@ var n = d.getTime();
           name: input,
           number: input1, 
           time: n,
-          entry: "offline"
+          entry: "offline",
+          timeofday: time
           
       })
       .then(function() {
@@ -615,6 +633,7 @@ updateData();
   var inputValue = change.doc.data().name;
   var entry = change.doc.data().entry;
   var person = change.doc.data().number;
+  var time = change.doc.data().timeofday;
 
 li.setAttribute('id',change.doc.id);
 
@@ -635,16 +654,16 @@ li.setAttribute('id',change.doc.id);
   var txt = document.createTextNode("\u00D7"); 
   var txt3 = document.createTextNode("         ");
   var txt1 = document.createTextNode('('+entry+')');
-  var txt2 = document.createTextNode('('+'Person: '+person+')');
-  
-  // var s = document.createTextNode("Time" +"-"+h +":" +m );
+  var txt2 = document.createTextNode('('+'P: '+person+')');
+ 
+  var s = document.createTextNode('('+'Time-' + time + ')');
  
 
   span.className = "close";
   span.appendChild(txt2);
   span.appendChild(txt1);
+  span.appendChild(s);
   span.appendChild(txt3);
-  // span.appendChild(s);
   span.appendChild(txt);
   li.appendChild(span);
 
