@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Client</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>exx</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+  
+
+<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<style>
+body{
+	background-color: 	#f9f9f9;
+}
+.card{
+	margin-left: 20%;
+	 height: 200px; 
+	 margin-right: 20%;
+	 border-radius: 7px;
+}
+pre{
+	display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.vl {
+    border-left: 1px solid grey;
+    height: 160px;
+    
+    opacity: 0.8;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .card {
+        margin-left: 5%;
+        margin-right: 5%;
+       
+      }
+     img {
+     	height: 10px;
+     	width: 10px;
+     }
+     h2{
+     	font-size: 20px;
+     }
+}
+/* Include the padding and border in an element's total width and height */
+
+/* Remove margins and padding from the list */
+
+
+/* Style the header */
+
+  .animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-30px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-30px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+   
+</style>
+</head>
+<body>
+   <div class="view full-page-intro parallax " style="background-image: url('pic1.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+<div class="mask rgba-grey-light animate-bottom" style="overflow-y: scroll;">
+<div >
+<br>
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-4" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+            	<h2 >Grill Kitchen </h2>
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > -->
+            </div>
+            <div class="col-8">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigOne"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            
+		            		
+		            	 <div><h6>Opens: 10AM</h6></div>
+		          		 <div><h6>Closes: 11PM</h6></div>
+	            	
+
+	            	
+            
+            	</div>
+            </div>
+
+          </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-3" style="display: flex; align-items: center;justify-content: center; height: 150px; flex-direction: column;">
+            	<h2 >Dominos </h2>
+            	<div><h6 style="text-align: center; display: flex; align-items: center;justify-content: center;">Anand 3.9 km to City Center</h6></div>
+            	
+            </div>
+             <div class="col-1" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+           
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > --><div class="vl" ></div>
+            </div>
+            <div class="col-7">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigTwo"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            	 <div><h6>Opens: 10AM</h6></div>
+          		 <div><h6>Closes: 11PM</h6></div>
+            
+            </div>
+
+             <div class="col-1" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+           
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > --><div class="vl" ></div>
+            </div>
+
+          </div>
+  </div>
+</div>
+   
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-4" style="display: flex; flex-direction: column; align-items: center;justify-content: center; height: 150px;">
+            	<div><h2 >Poptos </h2></div>
+            	<div><a href="example.html " id="xxx" style="display: none;"><h6>*Click To Reserve a Seat in Advance  <img src="http://www.adit.ac.in/img/new.gif" style="height: 1em; width: 2em"></h6></a></div>
+            </div>
+            <div class="col-8">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigThree"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            	 <div><h6>Opens: 10AM</h6></div>
+          		 <div><h6>Closes: 11PM</h6></div>
+            
+            </div>
+
+          </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-4" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+            	<h2 >Madhuban Resort </h2>
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > -->
+            </div>
+            <div class="col-8">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigFour"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            	 <div><h6>Opens: 10AM</h6></div>
+          		 <div><h6>Closes: 11PM</h6></div>
+            
+            </div>
+
+          </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-4" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+            	<h2 >Khetlapa </h2>
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > -->
+            </div>
+            <div class="col-8">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigFive"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            	 <div><h6>Opens: 10AM</h6></div>
+          		 <div><h6>Closes: 11PM</h6></div>
+            
+            </div>
+
+          </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-4" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+            	<h2 >Foodland </h2>
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > -->
+            </div>
+            <div class="col-8">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigSix"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            	 <div><h6>Opens: 10AM</h6></div>
+          		 <div><h6>Closes: 11PM</h6></div>
+            
+            </div>
+
+          </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-4" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+            	<h2 >Hot & Spicy </h2>
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > -->
+            </div>
+            <div class="col-8">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigSeven"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            	 <div><h6>Opens: 10AM</h6></div>
+          		 <div><h6>Closes: 11PM</h6></div>
+            
+            </div>
+
+          </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+     <div class="row">
+            <div class="col-4" style="display: flex; align-items: center;justify-content: center; height: 150px;">
+            	<h2 >Recharge Cafe </h2>
+            	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > -->
+            </div>
+            <div class="col-8">
+            	<div><h5 style="text-align: center;">Waiting Time</h5></div>
+            	<pre id="bigEight"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
+            	<br>
+            	 <div><h6>Opens: 10AM</h6></div>
+          		 <div><h6>Closes: 11PM</h6></div>
+            
+            </div>
+
+          </div>
+  </div>
+</div>
+<br>
+<br>
+</div>
+</div>
+ 
+ </div>
+</div>
+
+<script>
+
+var s;
+
+  function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+  }
+
+
+  
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
+    authDomain: "management-a62a2.firebaseapp.com",
+    databaseURL: "https://management-a62a2.firebaseio.com",
+    projectId: "management-a62a2",
+    storageBucket: "management-a62a2.appspot.com",
+    messagingSenderId: "972960577898"
+  };
+  firebase.initializeApp(config);
+//..............................................................
+    var d = new Date();
+    var x = document.getElementById("demo");
+    var h = addZero(d.getHours());
+    
+    
+//grill kitchen
+if(h>=21 && h<23){
+var bigOne = document.getElementById('bigOne');
+  
+var dbRef = firebase.database().ref().child('text4');
+ dbRef.on('value',snap =>bigOne.innerText = snap.val());
+  }
+else if(h>=10 && h<15){
+
+      
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+      
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+      
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
+
+
+}
+else{
+
+      
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigOne.innerText = snap.val());
+
+
+}
+
+//dominios
+if(h>=21 && h<23){
+var bigTwo = document.getElementById('bigTwo');
+  
+var dbRef = firebase.database().ref().child('text');
+ dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+  }
+else if(h>=10 && h<15){
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+else{
+
+      
+
+var bigTwo = document.getElementById('bigTwo');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigTwo.innerText = snap.val());
+
+
+}
+
+// //poptos
+if(1===1){
+ var x = document.getElementById("xxx");
+var bigThree = document.getElementById('bigThree');
+  
+
+    var dbRef = firebase.database().ref().child('user_name');
+    
+    dbRef.on('value',function(snap){
+
+    	s  = snap.val()
+    	bigThree.innerHTML=s;
+    	if(s!=="No Waiting "){
+    		x.style.display = "block";
+    	}
+    	else{
+    		x.style.display = "none";
+    	}
+    });
+}
+   
+
+//madhubhan
+if(h>=21 && h<23){
+var bigFour = document.getElementById('bigFour');
+  
+var dbRef = firebase.database().ref().child('text1');
+ dbRef.on('value',snap =>bigFour.innerText = snap.val());
+  }
+else if(h>=10 && h<15){
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+
+}
+else{
+
+      
+
+var bigFour = document.getElementById('bigFour');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigFour.innerText = snap.val());
+
+}
+
+if(h>=21 && h<23){
+var bigFive = document.getElementById('bigFive');
+  
+var dbRef = firebase.database().ref().child('text');
+ dbRef.on('value',snap =>bigFive.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
+
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigFive = document.getElementById('bigFive');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigFive.innerText = snap.val());
+
+
+}
+
+///dhosha.com//Six
+if(h>=21 && h<23){
+var bigSix = document.getElementById('bigSix');
+  
+var dbRef = firebase.database().ref().child('text4');
+ dbRef.on('value',snap =>bigSix.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigSix = document.getElementById('bigSix');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigSix.innerText = snap.val());
+
+
+}
+
+////pep-pizza///Seven
+if(h>=21 && h<23){
+var bigSeven = document.getElementById('bigSeven');
+  
+var dbRef = firebase.database().ref().child('text');
+ dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigSeven = document.getElementById('bigSeven');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigSeven.innerText = snap.val());
+
+
+}
+
+
+if(h>=21 && h<23){
+var bigEight = document.getElementById('bigEight');
+  
+var dbRef = firebase.database().ref().child('text4');
+ dbRef.on('value',snap =>bigEight.innerText = snap.val());
+	}
+else if(h>=10 && h<15){
+
+		  
+
+var bigEight= document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text1');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
+else if(h>=15 && h<19){
+
+		  
+
+var bigEight = document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text2');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
+else if(h>=19 && h<21){
+
+		  
+
+var bigEight = document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text4');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
+else{
+
+		  
+
+var bigEight = document.getElementById('bigEight');
+var dbRef = firebase.database().ref().child('text3');
+  
+dbRef.on('value',snap =>bigEight.innerText = snap.val());
+
+
+}
+
+
+      
+
+</script>
+
+
+ 
+
+   <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+</body>
+</html>
