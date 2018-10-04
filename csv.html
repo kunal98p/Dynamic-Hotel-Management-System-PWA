@@ -29,7 +29,10 @@ body{
 	margin-left: 20%;
 	 height: 200px; 
 	 margin-right: 20%;
-	 border-radius: 7px;
+	 border-radius: 5px;
+	 margin-bottom: 1.5%;
+	 opacity: 0.9;
+
 }
 pre{
 	display: block;
@@ -54,9 +57,9 @@ pre{
 
 @media only screen and (max-width: 600px) {
     .card {
-        margin-left: 5%;
-        margin-right: 5%;
-       
+        margin-left: 2%;
+        margin-right: 2%;
+       	height: 180px;
       }
      img {
      	height: 10px;
@@ -67,6 +70,10 @@ pre{
      }
      .view{
      	height: 100%;
+     	background-color: #ebeced
+     }
+     h1{
+     	font-size: 40px;
      }
 }
 /* Include the padding and border in an element's total width and height */
@@ -76,6 +83,7 @@ pre{
 
 /* Style the header */
 
+/*background-color: #ebeced;*/
   .animate-bottom {
   position: relative;
   -webkit-animation-name: animatebottom;
@@ -93,15 +101,21 @@ pre{
   from{ bottom:-30px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
-   
+
 </style>
 </head>
 <body>
-   <div class="view full-page-intro" style="background-image: url('pic1.jpg'); background-repeat: no-repeat; background-size: cover;">
+   <div class="view full-page-intro" style=" background-image: url('kunal.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-<div class="mask rgba-grey-light animate-bottom" style="overflow-y: scroll; -webkit-overflow-scrolling: touch; height: 100%;">
+<div class=" animate-bottom" style="overflow-y: scroll; -webkit-overflow-scrolling: touch; height: 100%;">
+		<div class="container-fluid" style="background-color: white; height: 64px; display: flex; align-items: center; justify-content: center;"">
+			 <h1 style="text-align: center;">HMS</h1>
+</div>
+	<div class="container-fluid " style="background-color: #37454d; height: 150px; display: flex; align-items: center; justify-content: center;">
+  <h1 style="text-align: center; color: white">Explore The Restaurants Around </h1>
+</div>
 <div >
-<br>
+
 <br>
 <div class="card">
   <div class="card-body">
@@ -128,25 +142,25 @@ pre{
           </div>
   </div>
 </div>
-<br>
+
 <div class="card">
   <div class="card-body">
      <div class="row">
             <div class="col-3" style="display: flex; align-items: center;justify-content: center; height: 150px; flex-direction: column;">
             	<h2 >Dominos </h2>
-            	<div><h6 style="text-align: center; display: flex; align-items: center;justify-content: center;">Anand 3.9 km to City Center</h6></div>
+            	<div><h6 style="text-align: center; display: flex; align-items: center;justify-content: center; color: green">Anand, 3.9 km to City Center</h6></div>
             	
             </div>
              <div class="col-1" style="display: flex; align-items: center;justify-content: center; height: 150px;">
            
             	<!-- <img src="pic1.jpg" style="width: 180px; height: 150px;" > --><div class="vl" ></div>
             </div>
-            <div class="col-7">
+            <div class="col-6">
             	<div><h5 style="text-align: center;">Waiting Time</h5></div>
             	<pre id="bigTwo"><img src="http://media.churchattheplains.org/wp-content/uploads/sites/7/2016/11/uploading.gif" style="width: 20px; height: 20px;  margin-left: 5%; "></pre>
             	<br>
             	 <div><h6>Opens: 10AM</h6></div>
-          		 <div><h6>Closes: 11PM</h6></div>
+          		 <div><h6 style="color: red">Closes: 11PM</h6></div>
             
             </div>
 
@@ -159,7 +173,7 @@ pre{
   </div>
 </div>
    
-<br>
+
 <div class="card">
   <div class="card-body">
      <div class="row">
@@ -179,7 +193,7 @@ pre{
           </div>
   </div>
 </div>
-<br>
+
 <div class="card">
   <div class="card-body">
      <div class="row">
@@ -199,7 +213,7 @@ pre{
           </div>
   </div>
 </div>
-<br>
+
 <div class="card">
   <div class="card-body">
      <div class="row">
@@ -219,7 +233,7 @@ pre{
           </div>
   </div>
 </div>
-<br>
+
 <div class="card">
   <div class="card-body">
      <div class="row">
@@ -239,7 +253,7 @@ pre{
           </div>
   </div>
 </div>
-<br>
+
 <div class="card">
   <div class="card-body">
      <div class="row">
@@ -259,7 +273,7 @@ pre{
           </div>
   </div>
 </div>
-<br>
+
 <div class="card">
   <div class="card-body">
      <div class="row">
@@ -280,7 +294,7 @@ pre{
   </div>
 </div>
 <br>
-<br>
+
 </div>
 </div>
  
