@@ -1,8 +1,8 @@
 {
   "name": "HMS",
   "short_name": "HMS",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "theme_color": "#000022;",
+  "background_color": "#000022;",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",
