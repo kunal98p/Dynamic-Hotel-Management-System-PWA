@@ -257,9 +257,9 @@ promise.catch(e => alert("Error"));
 
 });
 
-
 firebase.auth().onAuthStateChanged(firebaseUser => {
-	if(firebaseUser){
+  if(firebaseUser){
+ const user_id = document.getElementById("user_id");
 	window.location = 'PoptosCMS.html';	
 }
 });
