@@ -557,13 +557,12 @@ function showPosition(position) {
 
       function showPage() {
         document.getElementById("loader").style.display = "none";
-        document.getElementById("myDiv").style.display = "block";
       }
   </script>
 
   <script>
   if ('serviceWorker' in navigator) {
-    console.log("Will the service worker register?");
+    // console.log("Will the service worker register?");
     navigator.serviceWorker.register('service-worker.js')
       .then(function(reg){
         console.log("Yes, it did.");
