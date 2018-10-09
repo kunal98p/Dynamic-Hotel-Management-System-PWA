@@ -3,14 +3,8 @@ self.addEventListener('install', function(e) {
    caches.open('video-store').then(function(cache) {
      return cache.addAll([
        '/index.html',
-       '/index.js',
+       
        '/csv.html',
-       '/sample.jpg',
-       '/css',
-       '/images',
-       '/js',
-       '/img',
-       '/scss'
      ]);
    })
  );
