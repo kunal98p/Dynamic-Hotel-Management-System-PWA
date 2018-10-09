@@ -6,7 +6,6 @@ self.addEventListener('install', function(e) {
        '/index.js',
        '/csv.html',
        '/sample.jpg',
-       '/font',
        '/css',
        '/images',
        '/js',
