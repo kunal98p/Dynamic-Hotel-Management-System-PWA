@@ -259,8 +259,8 @@ promise.catch(e => alert("Error"));
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser){
+  	localStorage.setItem("isLoggedIn", "true");
   var loggedIn= "true";
-  
   
     fb_db.child('loggedIn').set(loggedIn);
 
@@ -269,11 +269,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 }
 });
 
-var delete_cookie = function(name) {
-    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-};
-
-delete_cookie('username');
 
 
 </script>

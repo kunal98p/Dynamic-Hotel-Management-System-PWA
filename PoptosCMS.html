@@ -13,7 +13,6 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
-  
 
 <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 <!-- <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script> -->
@@ -401,6 +400,14 @@ z-index: 999999;
 
 
   <script>
+  var x = localStorage.getItem("isLoggedIn");
+  if(x==="true"){
+    console.log("welcome");
+
+  }
+  else{
+    window.location='cms.html';
+  }
 
   var count = 0;
   var id=0;
@@ -433,6 +440,7 @@ const settings = {/* your settings... */ timestampsInSnapshots: true};
  
  //    var h = addZero(d.getHours());
  //    var m = addZero(d.getMinutes());
+
 function isLoggedIn(){
  
   var dbRef = firebase.database().ref().child('loggedIn');
@@ -742,7 +750,7 @@ li.setAttribute('id',change.doc.id);
   
  function logOut(){
 
-
+    localStorage.setItem("isLoggedIn", "false");
     var loggedOut= "false";
   
   
