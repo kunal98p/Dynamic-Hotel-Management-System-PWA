@@ -299,7 +299,7 @@ z-index: 999999;
 
 </style>
 </head>
-<body onload="myFunction()">
+<body onload="myFunction();isLoggedIn()">
 
   <div id = "loader" class="spinner-wrapper">
 <div class="spinner">
@@ -432,8 +432,25 @@ const settings = {/* your settings... */ timestampsInSnapshots: true};
  
  //    var h = addZero(d.getHours());
  //    var m = addZero(d.getMinutes());
+function isLoggedIn(){
+ 
+  var dbRef = firebase.database().ref().child('loggedIn');
+   dbRef.on('value',function(snap){
+   var x;
+    x = snap.val();
+    if(x=="true"){
+      console.log("welcome");
 
-    user_name = "No waiting time";
+    }
+    else{
+      window.location = 'cms.html';  
+    }
+  });
+}
+
+
+
+    user_name = "No Waiting";
     fb_db.child('user_name').set(user_name)
 
     function updateData(){
@@ -454,7 +471,7 @@ const settings = {/* your settings... */ timestampsInSnapshots: true};
        else if(count === 0 ){
 
 
-    user_name = "No Waiting ";
+    user_name = "No Waiting";
   
   
     fb_db.child('user_name').set(user_name)
@@ -725,9 +742,14 @@ li.setAttribute('id',change.doc.id);
  function logOut(){
 
 
+    var loggedOut= "false";
+  
+  
+    fb_db.child('loggedIn').set(loggedOut);
 
     const auth = firebase.auth();
     firebase.auth().signOut();
+
 
 }
 

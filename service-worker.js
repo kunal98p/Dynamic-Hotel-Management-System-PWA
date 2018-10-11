@@ -6,7 +6,8 @@ self.addEventListener('install', function(e) {
        '/uploading.gif',
        '/csv.html',
        '/sample.jpg',
-       '/pic1.jpg'
+       '/pic1.jpg',
+       '/example.html'
 
      ]);
    })

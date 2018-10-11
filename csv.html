@@ -110,7 +110,7 @@ pre{
 <body>
    <div class="view full-page-intro" style=" background-image: url('kunal.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-<div style="overflow-y: scroll; -webkit-overflow-scrolling: touch; height: 100%;">
+<div style="overflow-y: auto; -webkit-overflow-scrolling: touch; height: 100%;">
 		<div class="container-fluid" style="background-color: white; height: 64px; display: flex; align-items: center; justify-content: center;">
 			 <h1 style="text-align: center;">HMS</h1>
 </div>
@@ -450,9 +450,12 @@ var bigThree = document.getElementById('bigThree');
     dbRef.on('value',function(snap){
 
     	s  = snap.val()
+
     	bigThree.innerHTML=s;
-    	if(s!=="No Waiting "){
+      console.log(s);
+    	if(s!="No Waiting"){
     		x.style.display = "block";
+        
     	}
     	else{
     		x.style.display = "none";

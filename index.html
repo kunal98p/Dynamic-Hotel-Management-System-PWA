@@ -218,7 +218,7 @@
   }
 
   .view, .view .mask, .waves-effect {
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 .display-4 {
@@ -288,7 +288,7 @@
   </style>
 </head>
 
-<body onload="myFunction();getLocation()">
+<body onload="myFunction();">
 
 <!-- preloader -->
 <!--   <div class="show"  >Sorry! We are Currently Working on Mobile Support :/  </div>
@@ -452,12 +452,12 @@ LOGIN</strong>
 
 
 
-   	function getLocation() {
+  
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";}
-    }
+   
  
 
 function showPosition(position) {
