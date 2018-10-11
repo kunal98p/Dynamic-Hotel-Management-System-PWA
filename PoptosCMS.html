@@ -401,8 +401,7 @@ z-index: 999999;
 
 
   <script>
-var x = document.cookie;
-console.log(x);
+
   var count = 0;
   var id=0;
 
@@ -438,8 +437,8 @@ function isLoggedIn(){
  
   var dbRef = firebase.database().ref().child('loggedIn');
    dbRef.on('value',function(snap){
-   var x;
-    x = snap.val();
+  
+    var x = snap.val();
     if(x=="true"){
       console.log("welcome");
 
