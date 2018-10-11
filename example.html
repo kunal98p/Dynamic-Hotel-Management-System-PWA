@@ -188,7 +188,7 @@ input {
 
 </style>
 </head>
-<body>
+<body onload="initNotifications()">
 
    <div class="view full-page-intro parallax" style="background-image: url('pic1.jpg'); background-repeat: no-repeat; background-size: cover;">
 
@@ -204,7 +204,7 @@ input {
   <input type="text" id="myInput" placeholder="Name...">
   <input type="text" id="Input" placeholder="No of person...">
 
-  <span onclick="createData()" class="addBtn">Add</span>
+  <span onclick="createData();showNotification()" class="addBtn">Add</span>
    <span id="test2" style="font-size: 25px; color: green;"></span>
 
   </div>
@@ -219,13 +219,45 @@ input {
 
 </div>
 </div>
+<script type="text/javascript">
+
+  var notificationsEnabled = false;
+  
+  function initNotifications() {
+    if (window.Notification) {
+      Notification.requestPermission(function(permission) {
+        if (permission === 'granted') {
+          notificationsEnabled = true;
+        } else {
+          alert("You denied Notifications, it's so sad :(");
+        }
+      });
+    } else {
+      alert("Your browser doesn't support Notifications API");
+    }
+  }
+  
+  function showNotification() {
+    if (notificationsEnabled) {
+      var notification = new Notification("HMS", {
+        body : 'Seat is Reserved',
+        icon : 'https://www.ssaurel.com/cryptocoins/screenshots/web_hi_res_512.png'
+      });
+      
+      setTimeout(function() { notification.close(); }, 5000);
+    } else {
+      alert("Notifications are disabled");
+    }
+  }
+</script>
+
+
 
  
 
 
 
   <script>
-
 
 var config = {
     apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
@@ -299,7 +331,8 @@ var d = new Date();
 
 var n = d.getTime();
 
-
+               
+  
       // Add a new document in collection "cities"
       db.collection("List").doc().set({
           name: inputValue,
@@ -311,6 +344,13 @@ var n = d.getTime();
       })
       .then(function() {
           console.log("Document successfully written!");
+
+             
+  
+               
+               
+        
+        
       })
       .catch(function(error) {
           console.error("Error writing document: ", error);
