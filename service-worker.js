@@ -8,6 +8,18 @@ self.addEventListener('install', function(e) {
        '/sample.jpg',
        '/pic1.jpg',
        '/poptos.jpg',
+       '/css/bootstrap.css',
+       '/js/bootstrap.js',
+       '/css/bootstrap.min.css',
+       '/js/bootstrap.min.js',
+       '/css/mdb.css',
+       '/js/mdb.js',
+       '/css/mdb.min.css',
+       '/js/mdb.min.js',
+       '/js/jquery-3.3.1.min.js',
+       '/js/popper.min.js',
+       '/css/style.min.css',
+       '/css/style.css',
        '/example.html'
 
      ]);
