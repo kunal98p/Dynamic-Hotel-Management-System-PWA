@@ -238,7 +238,7 @@ z-index: 999999;
     messagingSenderId: "972960577898"
   };
   firebase.initializeApp(config);
-
+const fb_db = firebase.database().ref();
 
  const user_id = document.getElementById("user_id");
     const user_pass = document.getElementById("user_pass");
@@ -259,12 +259,12 @@ promise.catch(e => alert("Error"));
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser){
- const user_id = document.getElementById("user_id");
-	window.location = 'PoptosCMS.html';	
   var loggedIn= "true";
   
   
     fb_db.child('loggedIn').set(loggedIn)
+ const user_id = document.getElementById("user_id");
+  window.location = 'PoptosCMS.html'; 
 }
 });
 
