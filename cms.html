@@ -262,7 +262,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   var loggedIn= "true";
   
   
-    fb_db.child('loggedIn').set(loggedIn)
+    fb_db.child('loggedIn').set(loggedIn);
+    document.cookie = "username=John Doe";
  const user_id = document.getElementById("user_id");
   window.location = 'PoptosCMS.html'; 
 }
