@@ -263,9 +263,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   
   
     fb_db.child('loggedIn').set(loggedIn);
-    document.cookie = "IsloggedIn=true";
-    var x = document.cookie;
-    console.log(x);
+
  const user_id = document.getElementById("user_id");
   window.location = 'PoptosCMS.html'; 
 }
