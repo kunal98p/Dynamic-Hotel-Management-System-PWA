@@ -5,7 +5,7 @@
   "background_color": "#FFFFFF",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "/images/icons/fox-icon.png",
