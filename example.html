@@ -222,7 +222,14 @@ input {
 
 <script>
 
+ var x = localStorage.getItem("show");
+  if(x==="true"){
+    console.log("welcome");
 
+  }
+  else{
+    window.location='csv.html';
+  }
 
   var notificationsEnabled = false;
 

@@ -455,10 +455,12 @@ var bigThree = document.getElementById('bigThree');
       console.log(s);
     	if(s!="No Waiting"){
     		x.style.display = "block";
+        localStorage.setItem("show", "true");
         
     	}
     	else{
     		x.style.display = "none";
+         localStorage.setItem("show", "false");
     	}
     });
 }
