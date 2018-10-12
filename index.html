@@ -537,12 +537,13 @@ function showPosition(position) {
       marker.setMap(map);
      
        if((position.coords.latitude>22 && position.coords.latitude<23) && (position.coords.longitude>72 && position.coords.longitude <74)) {
+           localStorage.setItem("anand", "true");
        		document.getElementById("kunal1").innerHTML = "<h6  style='color: green ; background: white; border-radius: 7px; padding-top: 5px; padding-bottom: 5px; text-align: center; width: 70%;margin-left: auto; margin-right: auto; font-weight: 500px; margin-bottom: 15px; '>"+"Available in Your Region :)" +"</h6>";
           	document.getElementById("kunal").innerHTML = "<a href='csv.html' class='btn btn-indigo btn-lg d-flex justify-content-center zoom btn1' >"+ "EXPLORE"+ "</a>"
           }
           else{
        		document.getElementById("kunal2").innerHTML = "Sorry! We are Not Available in Your Region :(";
-
+           localStorage.setItem("anand", "false");
           }
 
   }
@@ -619,7 +620,7 @@ function showPosition(position) {
       var input1 = document.getElementById("x1").value;
       input = input1.toLowerCase();
       if(input==="anand"){
-    
+            localStorage.setItem("anand", "true");
             document.getElementById("x3").innerHTML = "<a href='csv.html' class='btn btn-indigo btn-lg d-flex justify-content-center zoom btn1' >"+ "EXPLORE"+ "</a>"
            var x4= document.getElementById("x4");
            document.getElementById("x3").style.display = "block";
@@ -630,6 +631,7 @@ function showPosition(position) {
       document.getElementById("x4").innerHTML = "Sorry! We are Not Available in Your Region :(";
       document.getElementById("x4").style.display = "block";
        document.getElementById("x3").style.display = "none";
+       localStorage.setItem("anand", "false");
   }
   document.getElementById("x1").value = "";
 
