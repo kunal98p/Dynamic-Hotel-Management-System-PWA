@@ -21,7 +21,7 @@ self.addEventListener('install', function(e) {
        '/css/style.min.css',
        '/css/style.css',
        '/images/icons/fox-icon.png',
-       '/example.html'
+       '/reservation.html'
 
      ]);
    })
