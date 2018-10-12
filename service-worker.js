@@ -20,6 +20,7 @@ self.addEventListener('install', function(e) {
        '/js/popper.min.js',
        '/css/style.min.css',
        '/css/style.css',
+       '/images/icons/fox-icon.png',
        '/example.html'
 
      ]);

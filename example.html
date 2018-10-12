@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Clients</title>
+<title>Reservation</title>
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -203,7 +203,7 @@ input {
   <input type="text" id="myInput" placeholder="Name...">
   <input type="text" id="Input" placeholder="No of person...">
 
-  <span onclick="createData();showNotification()" class="addBtn">Add</span>
+  <span onclick="createData();" class="addBtn">Add</span>
    <span id="test2" style="font-size: 25px; color: green;"></span>
 
   </div>
@@ -225,7 +225,7 @@ input {
 
 
   var notificationsEnabled = false;
-  console.log("working");
+
   
   function initNotifications() {
     if (window.Notification) {
@@ -241,18 +241,7 @@ input {
     }
   }
   
-  function showNotification() {
-    if (notificationsEnabled) {
-      var notification = new Notification("HMS", {
-        body : 'Seat is Reserved',
-        icon : 'https://www.ssaurel.com/cryptocoins/screenshots/web_hi_res_512.png'
-      });
-      
-      setTimeout(function() { notification.close(); }, 5000);
-    } else {
-      alert("Notifications are disabled");
-    }
-  }
+ 
 
 
 var config = {
@@ -342,7 +331,17 @@ var n = d.getTime();
           console.log("Document successfully written!");
 
              
-  
+  			
+			    if (notificationsEnabled) {
+			      var notification = new Notification("HMS", {
+			        body : 'Your Seat for'+input+'person is Reserved at '+n,
+			        icon : '/images/icons/fox-icon.png'
+			      });
+			      
+			    } else {
+			      alert("Notifications are disabled");
+			    }
+
                
                
         
