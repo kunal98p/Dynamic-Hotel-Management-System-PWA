@@ -400,7 +400,7 @@ z-index: 999999;
 
 
   <script>
-  var x = sessionStorage.getItem("isLoggedIn");
+  var x = localStorage.getItem("isLoggedIn");
   if(x==="true"){
     console.log("welcome");
 
@@ -750,7 +750,7 @@ li.setAttribute('id',change.doc.id);
   
  function logOut(){
 
-    sessionStorage.setItem("isLoggedIn", "false");
+    localStorage.setItem("isLoggedIn", "false");
     var loggedOut= "false";
   
   

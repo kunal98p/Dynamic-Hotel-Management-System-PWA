@@ -308,7 +308,7 @@ pre{
 
 <script>
 
- var x = sessionStorage.getItem("anand");
+ var x = localStorage.getItem("anand");
   if(x==="true"){
     console.log("welcome");
 
@@ -464,12 +464,12 @@ var bigThree = document.getElementById('bigThree');
       console.log(s);
     	if(s!="No Waiting"){
     		x.style.display = "block";
-        sessionStorage.setItem("show", "true");
+        localStorage.setItem("show", "true");
         
     	}
     	else{
     		x.style.display = "none";
-         sessionStorage.setItem("show", "false");
+         localStorage.setItem("show", "false");
     	}
     });
 }
