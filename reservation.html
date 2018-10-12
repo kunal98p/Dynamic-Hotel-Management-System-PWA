@@ -222,14 +222,7 @@ input {
 
 <script>
 
- var x = sessionStorage.getItem("show");
-  if(x==="true"){
-    console.log("welcome");
-
-  }
-  else{
-    window.location='csv.html';
-  }
+  
 
   var notificationsEnabled = false;
 
@@ -249,6 +242,17 @@ input {
   }
   
  
+
+
+ var x = sessionStorage.getItem("show");
+  if(x==="true"){
+    console.log("welcome");
+
+  }
+  else{
+    window.location='csv.html';
+  }
+
 
 
 var config = {
@@ -341,7 +345,7 @@ var n = d.getTime();
   			
 			    if (notificationsEnabled) {
 			      var notification = new Notification("HMS", {
-			        body : 'Your Seat for '+input+' person has been Successfully Reserved at '+time+' .Have a Nice Time:)'
+			        body : 'Your Seat for ' +input+ ' person has been Successfully Reserved at ' +time+ ' .Have a Nice Time:)'
 			        icon : '/images/icons/fox-icon.png'
 			      });
 			      
