@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Admin</title>
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
 
-<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-<!-- <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-</script>
-<style>
+  </script>
+  <style>
 
-/* Include the padding and border in an element's total width and height */
+    /* Include the padding and border in an element's total width and height */
 * {
   box-sizing: border-box;
 }
@@ -205,19 +206,6 @@ pre{
     }
 
 
-
-/*.circle {
-  height: 50px;
-  width: 50px;
-  background-color: #555;
-  border-radius: 50%;
-}
-.square {
-  height: 50px;
-  width: 50px;
-  background-color: #555;
-}
-*/
 .rectangle1 {
   height: 150px;
   width: 200px;
@@ -298,15 +286,16 @@ z-index: 999999;
 
 </style>
 </head>
+
 <body onload="myFunction();isLoggedIn()">
 
-  <div id = "loader" class="spinner-wrapper">
-<div class="spinner">
-  <div class="bounce1"></div>
-  <div class="bounce2"></div>
-  <div class="bounce3"></div>
-</div>
-</div>
+  <div id="loader" class="spinner-wrapper">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
 
 
 
@@ -316,590 +305,586 @@ z-index: 999999;
 
     <div class="mask rgba-grey-light" style=" overflow-y: scroll;">
 
-<div class="row no-gutter fullwidth" >
-  <div class="col-lg-12 col-md-12" >
- <marquee scrolldelay="180" scrollamount="15" onmouseover="this.stop();" onmouseout="this.start();">
+      <div class="row no-gutter fullwidth">
+        <div class="col-lg-12 col-md-12">
+          <marquee scrolldelay="180" scrollamount="15" onmouseover="this.stop();" onmouseout="this.start();">
 
-<span class="label label-primary" style="background:#000022; font-weight: 300; padding-top: 20px; padding-bottom: 20px;">
-  <font style="color: white;">*Poptos Content Management System To implement Waiting List </font>
-</span></strong>
- </marquee><br>
-</div>
-</div>
-
-<div id="myDIV" class="header">
-
-
-
-  <h1 style="margin:5px ; font-size: 50px; font-weight: 200;">POPTOS CMS</h1>
-  <h3 style="margin:5px; font-weight: 200; ">(WAITING GUEST LIST)</h3>
-  <br>
-  
-
-  <input type="text" id="myInput" placeholder="Name...">
-  <input type="text" id="myInput1" placeholder="No. of Person...">
-  <span onclick="storeData();updateData()" class="addBtn">Add</span>
-
-
-</div>
-<br>
-
-  <div class="row"  >
-    <div class="col-sm" >
-      
-       <ul id="myUL" style="margin-left: 7%; margin-bottom: 2%">
-        
-       </ul>
- 
-    </div>
-
-
-          <div class="col-sm"  style="justify-content: center; align-items: center; display: flex;">
-            <div style="  display: flex;flex-direction: column;justify-content: center;align-items: center; " >
-            <div class="rectangle1" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
-          <p style="color: white; ">Table of 3</p>
-          <pre id="job1" style="padding-left: 3%;">Vacunt</pre>
-          <span onclick="schedular1();sub()" class="addBtn1" >Bill</span>
-      
-        </div>
-      
-        <br>
-       
-        <div class="rectangle3" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
-          <p style="color: white;">Table of 6</p>
-          
-          <pre id="job2" style="padding-left: 3%;">Vacunt</pre>
-             <span onclick="schedular2();sub()" class="addBtn1" >Bill</span>
-        </div >
-        <br>
-      
-        <div class="rectangle2" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
-          <p style="color: white;">Table of 8</p>
-          <pre id="job3" style="padding-left: 3%;">Vacunt</pre>
-     
-             <span onclick="schedular3();sub()" class="addBtn1" >Bill</span>
-     
+            <span class="label label-primary" style="background:#000022; font-weight: 300; padding-top: 20px; padding-bottom: 20px;">
+              <font style="color: white;">*Poptos Content Management System To implement Waiting List </font>
+            </span></strong>
+          </marquee><br>
         </div>
       </div>
-    </div>
-  </div>
 
-     
+      <div id="myDIV" class="header">
 
 
 
-  <div class="footer" style="border-radius: 5px;">
-   <a href="cms.html"  ><h4 style=" color: white; font-size: 15px; font-weight: 200; padding-top: 15px; " onclick="resetState();logOut()">SIGN OUT</h4></a>
-</div>
+        <h1 style="margin:5px ; font-size: 50px; font-weight: 200;">POPTOS CMS</h1>
+        <h3 style="margin:5px; font-weight: 200; ">(WAITING GUEST LIST)</h3>
+        <br>
 
 
+        <input type="text" id="myInput" placeholder="Name...">
+        <input type="text" id="myInput1" placeholder="No. of Person...">
+        <span onclick="storeData();updateData()" class="addBtn">Add</span>
 
 
- 
+      </div>
+      <br>
 
+      <div class="row">
+        <div class="col-sm">
 
+          <ul id="myUL" style="margin-left: 7%; margin-bottom: 2%">
 
-  <script>
-  var x = localStorage.getItem("isLoggedIn");
-  if(x==="true"){
-    console.log("welcome");
+          </ul>
 
-  }
-  else{
-    window.location='cms.html';
-  }
+        </div>
 
-  var count = 0;
-  var id=0;
 
-var config = {
-    apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
-    authDomain: "management-a62a2.firebaseapp.com",
-    databaseURL: "https://management-a62a2.firebaseio.com",
-    projectId: "management-a62a2",
-    storageBucket: "management-a62a2.appspot.com",
-    messagingSenderId: "972960577898"
-  };
-  firebase.initializeApp(config);
-const fb_db = firebase.database().ref();
-  // Initialize Cloud Firestore through Firebase
-var db = firebase.firestore();
-const settings = {/* your settings... */ timestampsInSnapshots: true};
-  db.settings(settings);
+        <div class="col-sm" style="justify-content: center; align-items: center; display: flex;">
+          <div style="  display: flex;flex-direction: column;justify-content: center;align-items: center; ">
 
- //  db.settings(settings);
- // function addZero(i) {
- //    if (i < 10) {
- //        i = "0" + i;
- //    }
- //    return i;
- //  }
+            <div class="rectangle1" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+              <p style="color: white; ">Table of 3</p>
+              <pre id="job1" style="padding-left: 3%;">Vacunt</pre>
+              <span onclick="schedular1();sub()" class="addBtn1">Bill</span>
 
 
- // var d = new Date();
- 
- //    var h = addZero(d.getHours());
- //    var m = addZero(d.getMinutes());
 
-function isLoggedIn(){
- 
-  var dbRef = firebase.database().ref().child('loggedIn');
-   dbRef.on('value',function(snap){
-  
-    var x = snap.val();
-    if(x=="true"){
-      console.log("welcome");
+            </div>
 
-    }
-    else{
-      window.location = 'cms.html';  
-    }
-  });
-}
 
+            <br>
 
+            <div class="rectangle3" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+              <p style="color: white;">Table of 6</p>
 
-    user_name = "No Waiting";
-    fb_db.child('user_name').set(user_name)
+              <pre id="job2" style="padding-left: 3%;">Vacunt</pre>
+              <span onclick="schedular2();sub()" class="addBtn1">Bill</span>
+            </div>
+            <br>
 
-    function updateData(){
+            <div class="rectangle2" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+              <p style="color: white;">Table of 8</p>
+              <pre id="job3" style="padding-left: 3%;">Vacunt</pre>
 
+              <span onclick="schedular3();sub()" class="addBtn1">Bill</span>
 
+            </div>
+          </div>
+        </div>
+      </div>
 
-      
-      
 
-      if(count===1){
-    
-    user_name = "1 Group in Waiting (Around 5-7 mins Waiting)";
-  
-  
-    fb_db.child('user_name').set(user_name)
-      }
 
-       else if(count === 0 ){
 
 
-    user_name = "No Waiting";
-  
-  
-    fb_db.child('user_name').set(user_name)
-      }
+      <div class="footer" style="border-radius: 5px;">
+        <a href="cms.html">
+          <h4 style=" color: white; font-size: 15px; font-weight: 200; padding-top: 15px; " onclick="resetState();logOut()">SIGN
+            OUT</h4>
+        </a>
+      </div>
 
-      else if(count === 2 ){
 
 
-    user_name = "2 Groups in Waiting(Around 7-10 mins Waiting )";
-  
-  
-    fb_db.child('user_name').set(user_name)
-      }
 
-       else if(count === 3 ){
 
 
-    user_name = "3 Groups in Waiting(Around 10-12 mins Waiting )";
-  
-  
-    fb_db.child('user_name').set(user_name)
-      }
 
-      else if(count === 4 ){
 
+      <script>
+        var x = localStorage.getItem("isLoggedIn");
+        if (x === "true") {
+          console.log("welcome");
 
-    user_name = "4 Groups in Waiting(Around 12-15 mins Waiting )";
-  
-  
-    fb_db.child('user_name').set(user_name)
-      }
+        }
+        else {
+          window.location = 'cms.html';
+        }
 
-      else if(count === 5 ){
+        var count = 0;
+        var id = 0;
 
+        var config = {
+          apiKey: "AIzaSyAvpxZObeqmKcFEQCVy1Zb5eaUo-hjpXhc",
+          authDomain: "management-a62a2.firebaseapp.com",
+          databaseURL: "https://management-a62a2.firebaseio.com",
+          projectId: "management-a62a2",
+          storageBucket: "management-a62a2.appspot.com",
+          messagingSenderId: "972960577898"
+        };
+        firebase.initializeApp(config);
+        const fb_db = firebase.database().ref();
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+        const settings = {/* your settings... */ timestampsInSnapshots: true };
+        db.settings(settings);
 
-    user_name = "5 Groups in Waiting(Around 15-20 mins Waiting)";
-  
-  
-    fb_db.child('user_name').set(user_name)
-      }
 
-      else if(count === 6 ||count === 7 ||count === 8   ){
 
+        function isLoggedIn() {
 
-    user_name = "6-8 Groups in Waiting(Around 25-30 mins Waiting)";
-  
-  
-    fb_db.child('user_name').set(user_name)
-      }
+          var dbRef = firebase.database().ref().child('loggedIn');
+          dbRef.on('value', function (snap) {
 
-      else{
-        user_name = "Rush hours(More than 30 mins Waiting)";
-  
-  
-      fb_db.child('user_name').set(user_name)
-      }
+            var x = snap.val();
+            if (x == "true") {
+              console.log("welcome");
 
+            }
+            else {
+              window.location = 'cms.html';
+            }
+          });
+        }
 
 
 
-  }
+        user_name = "No Waiting";
+        fb_db.child('user_name').set(user_name)
 
+        function updateData() {
 
- function resetState() {
-  count = 0;
-  updateData();
-}
 
-// Create a "close" button and append it to each list item
 
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-  
-}
 
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
 
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-   
-  }
-}
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+          if (count === 1) {
 
+            user_name = "1 Group in Waiting (Around 5-7 mins Waiting)";
 
 
- 
+            fb_db.child('user_name').set(user_name)
+          }
 
-    function storeData(){
+          else if (count === 0) {
 
 
-   db.settings(settings);
- function addZero(i) {
-    if (i < 10) {
-        i = "0" + i;
-    }
-    return i;
-  }
+            user_name = "No Waiting";
 
 
- // var d = new Date();
-var d = new Date();
- 
-    var h = addZero(d.getHours());
-    var m = addZero(d.getMinutes());
-    var time = h+':'+m;
-    console.log(time);
+            fb_db.child('user_name').set(user_name)
+          }
 
-var n = d.getTime();
+          else if (count === 2) {
 
 
-    var input = document.getElementById("myInput").value;
-    var input2 = document.getElementById("myInput1").value;
-    var input1 = parseInt(input2);
+            user_name = "2 Groups in Waiting(Around 7-10 mins Waiting )";
 
-      
-      db.collection("List").doc().set({
-          name: input,
-          number: input1, 
-          time: n,
-          entry: "offline",
-          timeofday: time
-          
-      })
-      .then(function() {
-          console.log("Document successfully written!");
-      })
-      .catch(function(error) {
-          console.error("Error writing document: ", error);
-      });
 
-      
-    
+            fb_db.child('user_name').set(user_name)
+          }
 
-}
+          else if (count === 3) {
 
 
+            user_name = "3 Groups in Waiting(Around 10-12 mins Waiting )";
 
 
+            fb_db.child('user_name').set(user_name)
+          }
 
+          else if (count === 4) {
 
-         
-db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
-     querySnapshot.docChanges().forEach(function(change) {
+
+            user_name = "4 Groups in Waiting(Around 12-15 mins Waiting )";
+
+
+            fb_db.child('user_name').set(user_name)
+          }
+
+          else if (count === 5) {
+
+
+            user_name = "5 Groups in Waiting(Around 15-20 mins Waiting)";
+
+
+            fb_db.child('user_name').set(user_name)
+          }
+
+          else if (count === 6 || count === 7 || count === 8) {
+
+
+            user_name = "6-8 Groups in Waiting(Around 25-30 mins Waiting)";
+
+
+            fb_db.child('user_name').set(user_name)
+          }
+
+          else {
+            user_name = "Rush hours(More than 30 mins Waiting)";
+
+
+            fb_db.child('user_name').set(user_name)
+          }
+
+
+
+
+        }
+
+
+        function resetState() {
+          count = 0;
+          updateData();
+        }
+
+        // Create a "close" button and append it to each list item
+
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          myNodelist[i].appendChild(span);
+
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+
+        var i;
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+
+          }
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function (ev) {
+          if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+          }
+        }, false);
+
+
+
+
+
+        function storeData() {
+
+
+          db.settings(settings);
+          function addZero(i) {
+            if (i < 10) {
+              i = "0" + i;
+            }
+            return i;
+          }
+
+
+          // var d = new Date();
+          var d = new Date();
+
+          var h = addZero(d.getHours());
+          var m = addZero(d.getMinutes());
+          var time = h + ':' + m;
+          console.log(time);
+
+          var n = d.getTime();
+
+
+          var input = document.getElementById("myInput").value;
+          var input2 = document.getElementById("myInput1").value;
+          var input1 = parseInt(input2);
+
+
+          db.collection("List").doc().set({
+            name: input,
+            number: input1,
+            time: n,
+            entry: "offline",
+            timeofday: time
+
+          })
+            .then(function () {
+              console.log("Document successfully written!");
+            })
+            .catch(function (error) {
+              console.error("Error writing document: ", error);
+            });
+
+
+
+
+        }
+
+
+
+
+
+
+
+        db.collection("List").orderBy("time", "asc").onSnapshot(function (querySnapshot) {
+          querySnapshot.docChanges().forEach(function (change) {
             if (change.type === "added") {
 
 
 
 
 
-count=count+1;
-updateData();
-  console.log(count) 
-  
-  var li = document.createElement("li");
+              count = count + 1;
+              updateData();
+              console.log(count)
 
-  
-
-  var inputValue = change.doc.data().name;
-  var entry = change.doc.data().entry;
-  var person = change.doc.data().number;
-  var time = change.doc.data().timeofday;
-
-li.setAttribute('id',change.doc.id);
+              var li = document.createElement("li");
 
 
 
-  var t = document.createTextNode(inputValue);
+              var inputValue = change.doc.data().name;
+              var entry = change.doc.data().entry;
+              var person = change.doc.data().number;
+              var time = change.doc.data().timeofday;
 
-  li.appendChild(t);
-  
-
-    var x = document.getElementById("myUL").appendChild(li);
-    
-
-
-  document.getElementById("myInput").value = "";
-  document.getElementById("myInput1").value = "";
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7"); 
-  var txt3 = document.createTextNode("         ");
-  var txt1 = document.createTextNode('('+entry+')');
-  var txt2 = document.createTextNode('('+'P: '+person+')');
- 
-  var s = document.createTextNode('('+'Time-' + time + ')');
- 
-
-  span.className = "close";
-  span.appendChild(txt2);
-  span.appendChild(txt1);
-  span.appendChild(s);
-  span.appendChild(txt3);
-  span.appendChild(txt);
-  li.appendChild(span);
+              li.setAttribute('id', change.doc.id);
 
 
-  db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
-     querySnapshot.docChanges().forEach(function(change) {
-            if (change.type === "removed") {
 
-          
-                         
-                        var id = change.doc.id;
-                        console.log(id)
-                        var y =document.getElementById(id);
-                     
-                        console.log(y);
-  
-                            
-                            y.style.display = "none";
-               
+              var t = document.createTextNode(inputValue);
 
-                   }
-          });
-     
-   });
+              li.appendChild(t);
 
 
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-     					      count=count-1;
-                        updateData();
-                        console.log(count)
-                    let id = this.parentElement.getAttribute('id');
+              var x = document.getElementById("myUL").appendChild(li);
 
-                        db.collection("List").doc(id).delete().then(function() {
-                        var div = this.parentElement;
-                        div.style.display = "none";
-                  
-                      console.log("Document successfully deleted!");
-                  }).catch(function(error) {
-                      console.log("Error removing document: ", error);
+
+
+              document.getElementById("myInput").value = "";
+              document.getElementById("myInput1").value = "";
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              var txt3 = document.createTextNode("         ");
+              var txt1 = document.createTextNode('(' + entry + ')');
+              var txt2 = document.createTextNode('(' + 'P: ' + person + ')');
+
+              var s = document.createTextNode('(' + 'Time-' + time + ')');
+
+
+              span.className = "close";
+              span.appendChild(txt2);
+              span.appendChild(txt1);
+              span.appendChild(s);
+              span.appendChild(txt3);
+              span.appendChild(txt);
+              li.appendChild(span);
+
+
+              db.collection("List").orderBy("time", "asc").onSnapshot(function (querySnapshot) {
+                querySnapshot.docChanges().forEach(function (change) {
+                  if (change.type === "removed") {
+
+
+
+                    var id = change.doc.id;
+                    console.log(id)
+                    var y = document.getElementById(id);
+
+                    console.log(y);
+
+
+                    y.style.display = "none";
+
+
+                  }
+                });
+
+              });
+
+
+              for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                  count = count - 1;
+                  updateData();
+                  console.log(count)
+                  let id = this.parentElement.getAttribute('id');
+
+                  db.collection("List").doc(id).delete().then(function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+
+                    console.log("Document successfully deleted!");
+                  }).catch(function (error) {
+                    console.log("Error removing document: ", error);
                   });
+
+                }
+
+              }
 
             }
 
-          }
+
+          });
+        });
+
+
+
+
+
+
+
+        function logOut() {
+
+          localStorage.setItem("isLoggedIn", "false");
+          var loggedOut = "false";
+
+
+          fb_db.child('loggedIn').set(loggedOut);
+
+          const auth = firebase.auth();
+          firebase.auth().signOut();
+
 
         }
-            
-            
-    });
-});
+
+
+        var li = 0;
+
+        var job1 = document.getElementById("job1");
+        var job2 = document.getElementById("job2");
+        var job3 = document.getElementById("job3");
+
+
+        function schedular1() {
+          job1.innerHTML = 'UnOccupied';
+        }
+
+
+        function schedular2() {
+          job2.innerHTML = 'UnOccupied';
+
+
+        }
+
+        function schedular3() {
+
+          job3.innerHTML = 'UnOccupied';
 
 
 
-         
-
- 
-  
- function logOut(){
-
-    localStorage.setItem("isLoggedIn", "false");
-    var loggedOut= "false";
-  
-  
-    fb_db.child('loggedIn').set(loggedOut);
-
-    const auth = firebase.auth();
-    firebase.auth().signOut();
+        }
+        function sub() {
 
 
-}
-
-
-var li=0;
-
-var job1 = document.getElementById("job1");
-var job2 = document.getElementById("job2");
-var job3 = document.getElementById("job3");
-
-
-function schedular1(){
-job1.innerHTML = 'UnOccupied';
-}
-
-
-function schedular2(){
-job2.innerHTML = 'UnOccupied';
-
-
-}
-
-function schedular3(){
-
-job3.innerHTML = 'UnOccupied';
-
-
-
-}
-function sub(){
-
-
-db.collection("List").orderBy("time", "asc").onSnapshot(function(querySnapshot) {
-     querySnapshot.docChanges().forEach(function(change) {
-            if (change.type === "added") {
+          db.collection("List").orderBy("time", "asc").onSnapshot(function (querySnapshot) {
+            querySnapshot.docChanges().forEach(function (change) {
+              if (change.type === "added") {
 
                 var inputValue = change.doc.data().name;
-               var inputValue1 = change.doc.data().number;
-              var time = change.doc.data().time;
+                var inputValue1 = change.doc.data().number;
+                var time = change.doc.data().time;
 
 
 
-        if(job1.innerHTML==='UnOccupied' && inputValue1>0 && inputValue1<4){
-
-        
-              job1.innerHTML = 'Guest Name: '+inputValue;
-      
-              db.collection("List").doc(change.doc.id).delete().then(function() {
-              	count=count-1;
-              	updateData();
-              	console.log(count);
-          console.log("Document successfully deleted!");
-      }).catch(function(error) {
-          console.error("Error removing document: ", error);
-      });
-    }
-
-    else if(job2.innerHTML==='UnOccupied' && inputValue1>3 && inputValue1<8){
+                if (job1.innerHTML === 'UnOccupied' && inputValue1 > 0 && inputValue1 < 4) {
 
 
-              
-              var inputValue = change.doc.data().name;
-               var inputValue1 = change.doc.data().number;
-              var time = change.doc.data().time;
-            
-        
-              job2.innerHTML = 'Guest Name: '+inputValue;
+                  job1.innerHTML = 'Guest Name: ' + inputValue;
 
-              db.collection("List").doc(change.doc.id).delete().then(function() {
-              	count=count-1;
-              	updateData();
-              	console.log(count);
-          console.log("Document successfully deleted!");
-      }).catch(function(error) {
-          console.error("Error removing document: ", error);
-      });
-      
-  
-    }
+                  db.collection("List").doc(change.doc.id).delete().then(function () {
+                    count = count - 1;
+                    updateData();
+                    console.log(count);
+                    console.log("Document successfully deleted!");
+                  }).catch(function (error) {
+                    console.error("Error removing document: ", error);
+                  });
+                }
 
-    else if(job3.innerHTML==='UnOccupied' && inputValue1>7 && inputValue1<11){
+                else if (job2.innerHTML === 'UnOccupied' && inputValue1 > 3 && inputValue1 < 8) {
 
 
-              
-              var inputValue = change.doc.data().name;
-               var inputValue1 = change.doc.data().number;
-              var time = change.doc.data().time;
-          
-        
-              job3.innerHTML = 'Guest Name: '+inputValue;
 
-              db.collection("List").doc(change.doc.id).delete().then(function() {
-              	count=count-1;
-              	updateData();
-              	console.log(count);
-          console.log("Document successfully deleted!");
-      }).catch(function(error) {
-          console.error("Error removing document: ", error);
-      });
-      
-
-    }
-
-  }
-
-        });
-    })
-}
+                  var inputValue = change.doc.data().name;
+                  var inputValue1 = change.doc.data().number;
+                  var time = change.doc.data().time;
 
 
-  
+                  job2.innerHTML = 'Guest Name: ' + inputValue;
+
+                  db.collection("List").doc(change.doc.id).delete().then(function () {
+                    count = count - 1;
+                    updateData();
+                    console.log(count);
+                    console.log("Document successfully deleted!");
+                  }).catch(function (error) {
+                    console.error("Error removing document: ", error);
+                  });
 
 
-</script>
+                }
 
-  <script>
-      var myVar;
+                else if (job3.innerHTML === 'UnOccupied' && inputValue1 > 7 && inputValue1 < 11) {
 
-      function myFunction() {
+
+
+                  var inputValue = change.doc.data().name;
+                  var inputValue1 = change.doc.data().number;
+                  var time = change.doc.data().time;
+
+
+                  job3.innerHTML = 'Guest Name: ' + inputValue;
+
+                  db.collection("List").doc(change.doc.id).delete().then(function () {
+                    count = count - 1;
+                    updateData();
+                    console.log(count);
+                    console.log("Document successfully deleted!");
+                  }).catch(function (error) {
+                    console.error("Error removing document: ", error);
+                  });
+
+
+                }
+
+              }
+
+            });
+          })
+        }
+
+
+
+
+
+      </script>
+
+      <script>
+        var myVar;
+
+        function myFunction() {
           myVar = setTimeout(showPage, 1700);
-      }
+        }
 
-      function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("myDiv").style.display = "block";
-      }
-  </script>
-
-
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+      </script>
 
 
-   <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+      <!-- SCRIPTS -->
+      <!-- JQuery -->
+      <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+      <!-- Bootstrap tooltips -->
+      <script type="text/javascript" src="js/popper.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <!-- MDB core JavaScript -->
+      <script type="text/javascript" src="js/mdb.min.js"></script>
 
 
 </body>
+
 </html>
